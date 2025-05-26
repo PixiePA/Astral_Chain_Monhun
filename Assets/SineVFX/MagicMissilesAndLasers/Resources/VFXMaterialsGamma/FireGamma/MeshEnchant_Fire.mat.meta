@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2dfd6fb1c45313a4cb2314bd58d3a87b
+timeCreated: 1505629749
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/FireGamma/MeshEnchant_Fire.mat
+  uploadId: 756751

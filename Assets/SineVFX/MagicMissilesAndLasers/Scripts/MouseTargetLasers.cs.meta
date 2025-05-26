@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 472624ce8c7a6984ca2e9a842e17124d
+timeCreated: 1505725643
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Scripts/MouseTargetLasers.cs
+  uploadId: 756751

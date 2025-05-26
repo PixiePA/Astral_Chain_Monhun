@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 358caf9744a70464c8e7e3e9c24a186f
+timeCreated: 1507653213
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/SFX/StartWave_ArcaneEnergyPlasma03.prefab
+  uploadId: 756751

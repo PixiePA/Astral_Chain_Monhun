@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e8a4aa0a5132948468c48f3c4e07be1b
+timeCreated: 1507278053
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/LaserShots/LaserShot_Plasma.prefab
+  uploadId: 756751

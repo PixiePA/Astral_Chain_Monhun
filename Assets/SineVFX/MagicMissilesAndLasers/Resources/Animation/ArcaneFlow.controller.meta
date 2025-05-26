@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ba3692e68410afa4b80f34628db28e90
+timeCreated: 1506330835
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Animation/ArcaneFlow.controller
+  uploadId: 756751

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: cad7b9ae0f77aaf4197f5d22ff39a75c
+timeCreated: 1507729999
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Shaders/Laser_v01Con.shader
+  uploadId: 756751

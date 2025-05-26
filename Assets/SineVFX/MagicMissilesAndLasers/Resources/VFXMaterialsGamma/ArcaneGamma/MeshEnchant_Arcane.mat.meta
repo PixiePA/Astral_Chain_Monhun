@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4b97e9b4e547ddb4e8e476b9aedf32b7
+timeCreated: 1505629749
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/ArcaneGamma/MeshEnchant_Arcane.mat
+  uploadId: 756751

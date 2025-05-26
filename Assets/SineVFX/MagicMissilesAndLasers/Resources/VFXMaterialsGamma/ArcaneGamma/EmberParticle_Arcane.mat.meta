@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c7fcf7645a218d5468d250500a1302c2
+timeCreated: 1505815775
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/ArcaneGamma/EmberParticle_Arcane.mat
+  uploadId: 756751

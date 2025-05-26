@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 02f45bf79f413aa41b6c51318d044551
+timeCreated: 1505885713
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/FireGamma/ExplosionSpriteLitCurveMesh_Fire.mat
+  uploadId: 756751

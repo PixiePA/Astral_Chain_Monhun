@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 75466f668833afc468f5e17b8ca9efd0
+timeCreated: 1505519531
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/ElectroGamma/StartSphere_Electro.mat
+  uploadId: 756751

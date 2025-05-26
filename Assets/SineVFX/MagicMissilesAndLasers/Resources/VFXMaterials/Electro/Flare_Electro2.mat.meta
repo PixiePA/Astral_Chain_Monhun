@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6392dfcb54209ab45b9a1f29e344c8af
+timeCreated: 1506543376
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Electro/Flare_Electro2.mat
+  uploadId: 756751

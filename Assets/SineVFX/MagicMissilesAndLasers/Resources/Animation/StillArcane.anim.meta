@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 53ad8fc50b268b74ab25a5a4eba3bb9d
+timeCreated: 1506429277
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Animation/StillArcane.anim
+  uploadId: 756751

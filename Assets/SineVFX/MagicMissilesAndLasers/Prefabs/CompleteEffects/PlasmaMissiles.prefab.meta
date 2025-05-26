@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b02afe2ce50798f41ad2c43d65c77cf4
+timeCreated: 1507460976
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/CompleteEffects/PlasmaMissiles.prefab
+  uploadId: 756751

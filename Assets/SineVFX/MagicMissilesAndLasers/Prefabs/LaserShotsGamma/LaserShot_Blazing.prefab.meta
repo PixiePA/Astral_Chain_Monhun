@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0394f98e6fd84454e8d96028d337af5a
+timeCreated: 1506911660
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/LaserShotsGamma/LaserShot_Blazing.prefab
+  uploadId: 756751

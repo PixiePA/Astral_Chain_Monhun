@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 392c11521991f7841880bf0f515770b5
+timeCreated: 1506543376
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/PlasmaGamma/FlareWeak_Plasma.mat
+  uploadId: 756751

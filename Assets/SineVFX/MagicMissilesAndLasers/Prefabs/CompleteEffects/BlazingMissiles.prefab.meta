@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 368a1700607b45d48bafbd4a6df65b33
+timeCreated: 1507460945
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/CompleteEffects/BlazingMissiles.prefab
+  uploadId: 756751

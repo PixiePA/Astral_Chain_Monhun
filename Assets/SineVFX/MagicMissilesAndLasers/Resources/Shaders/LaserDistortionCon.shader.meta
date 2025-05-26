@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 651fcf0024918fb4295219750304520f
+timeCreated: 1507730051
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Shaders/LaserDistortionCon.shader
+  uploadId: 756751

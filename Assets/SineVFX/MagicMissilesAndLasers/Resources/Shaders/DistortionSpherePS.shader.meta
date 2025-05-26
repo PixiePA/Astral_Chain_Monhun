@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 685bc3e588d41e74da6fbe6880aea92e
+timeCreated: 1507729861
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Shaders/DistortionSpherePS.shader
+  uploadId: 756751

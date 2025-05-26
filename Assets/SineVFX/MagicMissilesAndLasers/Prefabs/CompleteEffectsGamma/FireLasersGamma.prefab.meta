@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 79a359584ef2fad458ffb2d21d70397c
+timeCreated: 1507812315
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/CompleteEffectsGamma/FireLasersGamma.prefab
+  uploadId: 756751

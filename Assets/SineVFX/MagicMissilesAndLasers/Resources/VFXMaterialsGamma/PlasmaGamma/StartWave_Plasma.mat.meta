@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d047831d48ed16841a265f46f7f472ba
+timeCreated: 1506335341
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/PlasmaGamma/StartWave_Plasma.mat
+  uploadId: 756751

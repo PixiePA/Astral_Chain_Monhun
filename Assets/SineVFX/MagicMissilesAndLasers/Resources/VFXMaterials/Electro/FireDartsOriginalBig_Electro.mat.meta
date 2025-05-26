@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7fd543e30c511d549bc95470aa9b1ac7
+timeCreated: 1505510099
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Electro/FireDartsOriginalBig_Electro.mat
+  uploadId: 756751

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: aa62de45b9d2e5a4abb4fc3775e72c73
+timeCreated: 1506641375
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/ArcaneGamma/ForceParticles_Arcane.mat
+  uploadId: 756751

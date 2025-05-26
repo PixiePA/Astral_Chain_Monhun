@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c9531d121da735342af411671a70efe2
+timeCreated: 1506815490
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/FireGamma/LaserCon_Fire.mat
+  uploadId: 756751

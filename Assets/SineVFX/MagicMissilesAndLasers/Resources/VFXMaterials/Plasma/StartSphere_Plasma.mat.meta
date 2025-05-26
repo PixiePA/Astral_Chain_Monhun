@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: cdffc663c706d034ca251f26d7046b67
+timeCreated: 1505519531
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Plasma/StartSphere_Plasma.mat
+  uploadId: 756751

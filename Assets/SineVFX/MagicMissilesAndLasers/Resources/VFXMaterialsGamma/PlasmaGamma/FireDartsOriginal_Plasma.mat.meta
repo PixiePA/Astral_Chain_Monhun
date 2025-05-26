@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: bba70279674c01a46b91f9cf6683f84b
+timeCreated: 1505510099
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/PlasmaGamma/FireDartsOriginal_Plasma.mat
+  uploadId: 756751

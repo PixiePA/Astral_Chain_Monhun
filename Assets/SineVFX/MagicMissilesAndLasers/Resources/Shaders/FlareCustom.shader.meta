@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 36343c79771c5014b81cf3ba04cd97ad
+timeCreated: 1507729973
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Shaders/FlareCustom.shader
+  uploadId: 756751

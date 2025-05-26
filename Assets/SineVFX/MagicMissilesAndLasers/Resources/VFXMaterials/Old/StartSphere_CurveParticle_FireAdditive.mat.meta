@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 02d22447385d50140981ad67c4f436f5
+timeCreated: 1505522257
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Old/StartSphere_CurveParticle_FireAdditive.mat
+  uploadId: 756751

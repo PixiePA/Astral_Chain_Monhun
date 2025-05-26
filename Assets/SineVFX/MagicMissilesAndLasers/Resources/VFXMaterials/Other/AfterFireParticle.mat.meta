@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 18e1edebe46d52b4da4aa0668332e93e
+timeCreated: 1505804884
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Other/AfterFireParticle.mat
+  uploadId: 756751

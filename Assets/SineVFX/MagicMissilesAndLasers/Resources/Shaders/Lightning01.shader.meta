@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: fba2f6779b1ca1e4bb11127c8f756170
+timeCreated: 1507730061
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Shaders/Lightning01.shader
+  uploadId: 756751

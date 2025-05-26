@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: db97845739c5f034eae87a21ccbe9cab
+timeCreated: 1507460942
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/CompleteEffects/FireMissiles.prefab
+  uploadId: 756751

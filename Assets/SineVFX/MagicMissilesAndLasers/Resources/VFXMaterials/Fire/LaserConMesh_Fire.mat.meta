@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4a57a605e885a3a4d8af77fa614c1810
+timeCreated: 1507191960
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Fire/LaserConMesh_Fire.mat
+  uploadId: 756751

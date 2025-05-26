@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 35b01aa459c1e1f47a3059fd81531274
+timeCreated: 1505885713
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Blazing/ExplosionSpriteLit_Blazing.mat
+  uploadId: 756751

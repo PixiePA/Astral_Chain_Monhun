@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4e362a41cea05e041b991fa95479c5b2
+timeCreated: 1506543376
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/EnergyGamma/Flare_Energy.mat
+  uploadId: 756751

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 294d438f46b39374296d83ad3dceafa9
+timeCreated: 1506815490
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Energy/Laser_Energy.mat
+  uploadId: 756751

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3e2d85796a9fdf342b3ecd54dcb1cd08
+timeCreated: 1507191698
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Meshes/VFXMeshes/OBJ/VFXCurve10.mtl
+  uploadId: 756751

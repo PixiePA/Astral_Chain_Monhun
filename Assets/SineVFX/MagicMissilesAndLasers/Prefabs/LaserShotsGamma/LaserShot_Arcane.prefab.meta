@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 689afd36596b0b64fbaa13246e0c60e6
+timeCreated: 1506912631
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/LaserShotsGamma/LaserShot_Arcane.prefab
+  uploadId: 756751

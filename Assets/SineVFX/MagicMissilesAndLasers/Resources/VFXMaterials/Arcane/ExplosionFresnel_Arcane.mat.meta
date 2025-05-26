@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e9c3a2ccc19adee47b01e7ce68a30d69
+timeCreated: 1506706336
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Arcane/ExplosionFresnel_Arcane.mat
+  uploadId: 756751

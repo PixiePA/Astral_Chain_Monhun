@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ad85e780b069b4b49a36f61d1658f1e0
+timeCreated: 1506815490
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/EnergyGamma/LaserCon_Energy.mat
+  uploadId: 756751

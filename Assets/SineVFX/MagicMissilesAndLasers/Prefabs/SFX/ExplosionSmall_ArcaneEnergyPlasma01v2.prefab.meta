@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4b3dd10e889217c41aec832b5f5bc6fb
+timeCreated: 1507654946
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/SFX/ExplosionSmall_ArcaneEnergyPlasma01v2.prefab
+  uploadId: 756751

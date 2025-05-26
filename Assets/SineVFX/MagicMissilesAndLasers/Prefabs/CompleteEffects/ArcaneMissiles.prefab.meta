@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d409dd82815d2ed488769076368049cc
+timeCreated: 1507460948
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/CompleteEffects/ArcaneMissiles.prefab
+  uploadId: 756751

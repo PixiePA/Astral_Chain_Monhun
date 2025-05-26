@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 01638dbc78729784f81cde202a59d906
+timeCreated: 1505495052
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/PrototypeGrid/PrototypeGrid01.mat
+  uploadId: 756751

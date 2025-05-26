@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f62485982363b3847ba2424d56940e91
+timeCreated: 1505911783
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/BlazingGamma/BigMissileCore_Blazing.mat
+  uploadId: 756751

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 685643a11c1610e4ab25cea0b5b4c267
+timeCreated: 1509003621
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Shaders/FireDartsOriginalFinal.shader
+  uploadId: 756751

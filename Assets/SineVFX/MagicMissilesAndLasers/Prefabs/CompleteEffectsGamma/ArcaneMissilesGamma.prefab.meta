@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c6132d11f7dd5c547b4b3205ebe4efdb
+timeCreated: 1507801241
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/CompleteEffectsGamma/ArcaneMissilesGamma.prefab
+  uploadId: 756751

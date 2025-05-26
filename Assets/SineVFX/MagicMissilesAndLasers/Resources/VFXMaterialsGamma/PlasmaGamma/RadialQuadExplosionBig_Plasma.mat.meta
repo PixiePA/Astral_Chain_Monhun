@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 78ba669c70490c642b154588f4282886
+timeCreated: 1506620743
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/PlasmaGamma/RadialQuadExplosionBig_Plasma.mat
+  uploadId: 756751

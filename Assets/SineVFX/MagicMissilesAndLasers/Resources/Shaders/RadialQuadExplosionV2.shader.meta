@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8626e31cbc1168945bf517d7b7669311
+timeCreated: 1507730093
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Shaders/RadialQuadExplosionV2.shader
+  uploadId: 756751

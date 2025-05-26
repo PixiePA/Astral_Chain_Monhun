@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c36495fe34ac9894da63a14b4221aaec
+timeCreated: 1505885713
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Blazing/ExplosionSpriteLitCurveMesh_Blazing.mat
+  uploadId: 756751

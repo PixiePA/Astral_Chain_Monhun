@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 518a875e6e1f7134fb6cb0b293eb791a
+timeCreated: 1505519531
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/BlazingGamma/StartSphere_Blazing.mat
+  uploadId: 756751

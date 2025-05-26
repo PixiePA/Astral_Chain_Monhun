@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a7ea9441271d23341989972d914f8ee3
+timeCreated: 1506543376
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Plasma/Beam_Plasma.mat
+  uploadId: 756751

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: db57af79627fa734f9ae04399a9613af
+timeCreated: 1505510099
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Fire/FireDartsOriginal_Fire.mat
+  uploadId: 756751

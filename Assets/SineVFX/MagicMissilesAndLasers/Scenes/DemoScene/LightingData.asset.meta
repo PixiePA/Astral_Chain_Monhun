@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 319a4301cdea7a744be4b0e3ca6ea11a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 25800000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Scenes/DemoScene/LightingData.asset
+  uploadId: 756751

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: daf868136134aed4ca632af9f26a1ac6
+timeCreated: 1506797132
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/ElectroGamma/Lightning02_Electro.mat
+  uploadId: 756751

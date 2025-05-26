@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: da29a6fd6ee88994a8256759fc25646a
+timeCreated: 1507730111
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Shaders/StartSphereCurveParticleAdditive.shader
+  uploadId: 756751

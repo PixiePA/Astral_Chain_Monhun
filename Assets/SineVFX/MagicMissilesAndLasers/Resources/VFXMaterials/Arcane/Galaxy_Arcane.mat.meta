@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ed47724dc0536f3488c9711bfa9e1018
+timeCreated: 1506421684
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Arcane/Galaxy_Arcane.mat
+  uploadId: 756751

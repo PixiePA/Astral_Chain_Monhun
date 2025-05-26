@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: bdff60016c1883b4db8ce8074184cc19
+timeCreated: 1507653213
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/SFX/StartWave_Electro01v2.prefab
+  uploadId: 756751

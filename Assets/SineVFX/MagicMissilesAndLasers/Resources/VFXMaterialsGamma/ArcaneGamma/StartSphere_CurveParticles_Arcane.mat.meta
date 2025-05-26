@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3f7eece65ed6a8e4ca5dc27d87d67821
+timeCreated: 1505522257
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/ArcaneGamma/StartSphere_CurveParticles_Arcane.mat
+  uploadId: 756751

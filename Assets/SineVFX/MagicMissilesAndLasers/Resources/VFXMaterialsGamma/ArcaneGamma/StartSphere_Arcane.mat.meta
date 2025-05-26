@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a420c8bd7cfa14b46b38d9bfeff00372
+timeCreated: 1505519531
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/ArcaneGamma/StartSphere_Arcane.mat
+  uploadId: 756751

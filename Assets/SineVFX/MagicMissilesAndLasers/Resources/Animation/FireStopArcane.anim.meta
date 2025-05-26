@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: cd18f92f9f6b6b24daa26119857b83b6
+timeCreated: 1506429277
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Animation/FireStopArcane.anim
+  uploadId: 756751

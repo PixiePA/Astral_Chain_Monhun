@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8bc576ef037219a4c8f6f5397893bb61
+timeCreated: 1506456441
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Animation/FireStartPlasma.anim
+  uploadId: 756751

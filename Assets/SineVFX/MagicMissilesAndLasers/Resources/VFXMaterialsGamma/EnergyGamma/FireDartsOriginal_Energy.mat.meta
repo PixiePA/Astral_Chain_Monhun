@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 073927979c68a9444b39cd5e9b6df648
+timeCreated: 1505510099
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/EnergyGamma/FireDartsOriginal_Energy.mat
+  uploadId: 756751

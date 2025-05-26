@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: efa3cc4b281984c42a3cc46e2efe45cf
+timeCreated: 1507730126
+licenseType: Store
+ShaderImporter:
+  defaultTextures:
+  - _Ramp: {fileID: 2800000, guid: 0c1654a137d7df741b6e1a143703a9a8, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Shaders/StartSphereV3.shader
+  uploadId: 756751

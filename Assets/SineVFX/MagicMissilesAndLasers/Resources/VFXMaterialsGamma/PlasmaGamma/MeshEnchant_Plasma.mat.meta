@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8b2bbae3b30aafc4db3c12b6fc0cac71
+timeCreated: 1505629749
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterialsGamma/PlasmaGamma/MeshEnchant_Plasma.mat
+  uploadId: 756751

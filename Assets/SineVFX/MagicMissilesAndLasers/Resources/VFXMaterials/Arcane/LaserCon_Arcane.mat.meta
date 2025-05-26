@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: caad032537715db4e84c3ccbb23e9b18
+timeCreated: 1506815490
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Arcane/LaserCon_Arcane.mat
+  uploadId: 756751

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a46c04550767dc74e8d6a0598073eeeb
+timeCreated: 1505804884
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Other/AfterFireCurveMeshParticle.mat
+  uploadId: 756751

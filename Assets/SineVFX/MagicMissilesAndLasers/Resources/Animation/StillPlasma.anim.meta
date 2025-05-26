@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 15dc223912ed0b447a53cd9cc0e2c135
+timeCreated: 1506456441
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/Animation/StillPlasma.anim
+  uploadId: 756751

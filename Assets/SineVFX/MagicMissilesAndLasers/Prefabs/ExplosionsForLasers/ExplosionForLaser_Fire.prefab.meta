@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f3db2cf7da5b6b34f99fafacd2918670
+timeCreated: 1506817646
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/ExplosionsForLasers/ExplosionForLaser_Fire.prefab
+  uploadId: 756751

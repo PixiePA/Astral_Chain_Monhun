@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 41a293eae68c8a74aaabffd16e2fc8f7
+timeCreated: 1506641375
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Electro/ExplosionEmbers_Electro.mat
+  uploadId: 756751

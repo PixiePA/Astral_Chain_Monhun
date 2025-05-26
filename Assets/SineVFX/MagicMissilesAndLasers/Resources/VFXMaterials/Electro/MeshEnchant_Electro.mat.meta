@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 084dd4e865ffbee44a832fa2c116df0b
+timeCreated: 1505629749
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Resources/VFXMaterials/Electro/MeshEnchant_Electro.mat
+  uploadId: 756751

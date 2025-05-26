@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 82e159ba82629f9428dc1ffdeb103cbb
+timeCreated: 1507654946
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/SFX/Explosion_FireBlazing03v2.prefab
+  uploadId: 756751

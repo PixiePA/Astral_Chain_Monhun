@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 659d0e1193d99ff44900030d36b89439
+timeCreated: 1507216952
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 102387
+  packageName: Magic Missiles and Lasers
+  packageVersion: 1.3
+  assetPath: Assets/SineVFX/MagicMissilesAndLasers/Prefabs/LaserShotsGamma/LaserShot_Energy.prefab
+  uploadId: 756751
