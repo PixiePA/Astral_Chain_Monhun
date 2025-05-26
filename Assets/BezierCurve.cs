@@ -26,6 +26,18 @@ public class BezierCurve
         Points = new Vector3[4];
     }
 
+    public BezierCurve(Vector3[] points)
+    {
+        if (points.Length > 4)
+        {
+            throw new ArgumentException("Bezier array length must be 4");
+        }
+        else
+        {
+            Points = points;
+        }
+    }
+
     public Vector3 GetSegment(float time)
     {
         time = Mathf.Clamp01(time);
