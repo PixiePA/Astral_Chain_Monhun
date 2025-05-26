@@ -9,7 +9,7 @@ Shader "Sine VFX/FireDartsOriginalFinal" {
     Properties {
         _Ramp ("Ramp", 2D) = "white" {}
         _ComTex ("ComTex", 2D) = "white" {}
-        _FinalPower ("Final Power", Range(0, 10)) = 5
+        _FinalPower ("Final Power", Range(0, 40)) = 5
         _OpacityBoost ("Opacity Boost", Range(0, 4)) = 4
         _OffsetPower ("Offset Power", Range(0, 4)) = 0
         _ScrollSpeed ("Scroll Speed", Range(-4, 4)) = 0
@@ -31,9 +31,6 @@ Shader "Sine VFX/FireDartsOriginalFinal" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend SrcAlpha OneMinusSrcAlpha
             ZWrite Off
             

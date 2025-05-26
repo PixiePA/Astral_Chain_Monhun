@@ -28,9 +28,6 @@ Shader "Sine VFX/LaserConMeshv3" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend SrcAlpha OneMinusSrcAlpha
             Cull Off
             ZWrite Off

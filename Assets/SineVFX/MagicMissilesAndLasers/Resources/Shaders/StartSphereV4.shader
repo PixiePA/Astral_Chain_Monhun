@@ -24,9 +24,7 @@ Shader "Sine VFX/StartSphereV4" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
+
             
             
             CGPROGRAM

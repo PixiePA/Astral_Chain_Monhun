@@ -16,16 +16,9 @@ Shader "Sine VFX/StartSphere" {
         _DistortionFresnelExp ("Distortion Fresnel Exp", Range(0, 4)) = 0
     }
     SubShader {
-        Tags {
-            "RenderType"="Opaque"
-        }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
-            
-            
+            Tags { "LightMode"="UniversalForward" }
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag

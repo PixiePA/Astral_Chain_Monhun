@@ -18,9 +18,6 @@ Shader "Sine VFX/FlareCustom" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend One One
             ZWrite Off
             

@@ -25,9 +25,7 @@ Shader "Sine VFX/StartWaveAlphaBlended" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
+
             Blend SrcAlpha OneMinusSrcAlpha
             ZWrite Off
             

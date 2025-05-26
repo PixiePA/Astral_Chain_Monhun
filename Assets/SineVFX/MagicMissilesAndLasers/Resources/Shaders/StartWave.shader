@@ -22,9 +22,7 @@ Shader "Sine VFX/StartWave" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
+
             Blend One One
             ZWrite Off
             

@@ -20,12 +20,7 @@ Shader "Sine VFX/StartSphereV2" {
             "RenderType"="Opaque"
         }
         Pass {
-            Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
-            
-            
+            Name "FORWARD"            
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag

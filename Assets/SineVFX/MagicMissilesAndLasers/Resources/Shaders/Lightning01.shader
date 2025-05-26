@@ -26,9 +26,6 @@ Shader "Sine VFX/Lightning01" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend One One
             ZWrite Off
             

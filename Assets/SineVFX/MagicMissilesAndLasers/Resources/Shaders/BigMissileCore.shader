@@ -23,9 +23,6 @@ Shader "Sine VFX/BigMissileCore" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend SrcAlpha OneMinusSrcAlpha
             Cull Off
             ZWrite Off

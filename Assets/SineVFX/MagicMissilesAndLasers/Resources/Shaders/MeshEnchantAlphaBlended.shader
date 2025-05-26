@@ -26,9 +26,6 @@ Shader "Sine VFX/MeshEnchantAlphaBlended" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend SrcAlpha OneMinusSrcAlpha
             ZWrite Off
             

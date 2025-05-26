@@ -23,9 +23,6 @@ Shader "Sine VFX/CurveParticleAlphaBlendedV2Complex" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend SrcAlpha OneMinusSrcAlpha
             Cull Off
             ZWrite Off

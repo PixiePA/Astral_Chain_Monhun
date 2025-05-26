@@ -18,9 +18,6 @@ Shader "Sine VFX/EmberParticle" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend One One
             ZWrite Off
             

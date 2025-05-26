@@ -19,9 +19,6 @@ Shader "Sine VFX/LaserDistortionCon" {
         GrabPass{ }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             ZWrite Off
             
             CGPROGRAM

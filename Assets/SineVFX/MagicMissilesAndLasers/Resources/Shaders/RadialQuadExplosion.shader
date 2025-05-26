@@ -25,9 +25,6 @@ Shader "Sine VFX/RadialQuadExplosion" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend SrcAlpha OneMinusSrcAlpha
             ZWrite Off
             

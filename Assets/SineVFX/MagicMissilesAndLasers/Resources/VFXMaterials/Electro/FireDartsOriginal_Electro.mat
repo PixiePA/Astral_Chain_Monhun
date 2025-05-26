@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: FireDartsOriginal_Electro
   m_Shader: {fileID: 4800000, guid: 685643a11c1610e4ab25cea0b5b4c267, type: 3}
   m_ShaderKeywords: _RANDOMOFFSETU_ON
@@ -43,7 +44,7 @@ Material:
     - _Cutoff: 0.5
     - _EdgePower: 4.5
     - _EdgeThickness: 0.85
-    - _FinalPower: 4
+    - _FinalPower: 20
     - _NoiseOffset: 0
     - _OffsetPower: 0
     - _OpacityBoost: 4

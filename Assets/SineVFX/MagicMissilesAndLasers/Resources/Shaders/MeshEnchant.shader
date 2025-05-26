@@ -24,9 +24,6 @@ Shader "Sine VFX/MeshEnchant" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend One One
             ZWrite Off
             

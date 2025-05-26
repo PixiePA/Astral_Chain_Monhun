@@ -18,9 +18,6 @@ Shader "Sine VFX/StartSphereCurveParticleAdditive" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend One One
             Cull Off
             ZWrite Off

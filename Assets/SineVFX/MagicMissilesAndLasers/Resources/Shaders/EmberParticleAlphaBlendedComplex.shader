@@ -22,9 +22,6 @@ Shader "Sine VFX/EmberParticleAlphaBlendedComplex" {
         }
         Pass {
             Name "FORWARD"
-            Tags {
-                "LightMode"="ForwardBase"
-            }
             Blend SrcAlpha OneMinusSrcAlpha
             ZWrite Off
             
