@@ -25,6 +25,19 @@ public class BezierCurve
     {
         Points = new Vector3[4];
     }
+    
+    //Creates bezier curve given parameters
+    public BezierCurve(Vector3 prevPosition, Vector3 position, Vector3 nextPosition, float smoothingLength)
+    {
+        Points = GetPoints(prevPosition, position, nextPosition, smoothingLength);
+    }
+
+
+    //Creates first bezier curve
+    public BezierCurve(Vector3 position, Vector3 nextPosition, float smoothingLength)
+    {
+        Points = GetPoints(position, position, nextPosition, smoothingLength);
+    }
 
     public BezierCurve(Vector3[] points)
     {
@@ -64,5 +77,17 @@ public class BezierCurve
         }
 
         return segments;
+    }
+
+    //Generates points along curve
+    private Vector3[] GetPoints(Vector3 prevPosition, Vector3 position, Vector3 nextPosition, float smoothingLength)
+    {
+        Vector3 lastDirection = (position - prevPosition).normalized;
+        Vector3 nextDirection = (nextPosition - position).normalized;
+
+        Vector3 startTangent = (lastDirection + nextDirection) * smoothingLength;
+        Vector3 endTangent = (lastDirection + nextDirection) * -smoothingLength;
+
+        return new Vector3[] { position, position + startTangent, nextPosition + endTangent, nextPosition };
     }
 }

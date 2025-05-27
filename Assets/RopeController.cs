@@ -21,6 +21,7 @@ public class RopeController : MonoBehaviour
     void Start()
     {
         ropeNodes = new List<Transform>(GetComponentsInChildren<Transform>());
+
     }
 
     // Update is called once per frame
@@ -30,17 +31,18 @@ public class RopeController : MonoBehaviour
         //Giving line renderer points
         if (ropeNodes.Count > 2)
         {
+            //Setting up bezier curves through nodes
             BezierCurve[] curves = new BezierCurve[ropeNodes.Count - 1];
             lineRenderer.positionCount = (curves.Length - 1) * (smoothingSegments - 1) + smoothingSegments;
 
             //Set up first curve
-            curves[0] = new BezierCurve(GetPoints(ropeNodes[0].position, ropeNodes[1].position));
+            curves[0] = new BezierCurve(ropeNodes[0].position, ropeNodes[1].position, smoothingLength);
 
 
             //Set up other curves
             for (int i = 1; i < curves.Length; i++)
             {
-                curves[i] = new BezierCurve(GetPoints(ropeNodes[i - 1].position, ropeNodes[i].position, ropeNodes[i + 1].position));
+                curves[i] = new BezierCurve(ropeNodes[i - 1].position, ropeNodes[i].position, ropeNodes[i + 1].position, smoothingLength);
             }
 
             Vector3 nextDirection = (curves[1].EndPositon - curves[1].StartPositon).normalized;
@@ -66,43 +68,12 @@ public class RopeController : MonoBehaviour
         }
         else
         {
+            //Draw between the 0 to 2 points with no smoothing
             lineRenderer.positionCount = ropeNodes.Count;
             for (int i = 0; i < ropeNodes.Count; i++)
             {
                 lineRenderer.SetPosition(i, ropeNodes[i].position);
             }
         }
-    }
-
-    private void SetupCurve(Vector3 prevPosition, Vector3 position, Vector3 nextPosition, BezierCurve curve)
-    {
-        Vector3[] points = GetPoints(prevPosition, position, nextPosition);
-
-        curve.Points[0] = points[0];
-        curve.Points[1] = points[1];
-        curve.Points[2] = points[2];
-        curve.Points[3] = points[3];
-
-    }
-
-    private void SetupCurve(Vector3 position, Vector3 nextPosition, BezierCurve curve)
-    {
-        SetupCurve(position, position, nextPosition, curve);
-    }
-
-    private Vector3[] GetPoints(Vector3 prevPosition, Vector3 position, Vector3 nextPosition)
-    {
-        Vector3 lastDirection = (position - prevPosition).normalized;
-        Vector3 nextDirection = (nextPosition - position).normalized;
-
-        Vector3 startTangent = (lastDirection + nextDirection) * smoothingLength;
-        Vector3 endTangent = (lastDirection + nextDirection) * -smoothingLength;
-
-        return new Vector3[] { position, position + startTangent, nextPosition + endTangent, nextPosition };
-    }
-
-    private Vector3[] GetPoints(Vector3 position, Vector3 nextPosition)
-    {
-        return GetPoints(position, position, nextPosition);
     }
 }

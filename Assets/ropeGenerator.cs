@@ -17,16 +17,22 @@ public class ropeGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Generates new rope notes if far enough away
         if ((transform.position - ropeEnd.transform.position).magnitude > distanceBeforeNewNode && ropeController.ropeNodes.Count <= maxNodes)
         {
-            GameObject newRopeNode = Instantiate(ropeSegmentPrefab, transform.position, Quaternion.identity);
-            newRopeNode.GetComponent<SpringJoint>().connectedBody = ropeEnd.GetComponent<Rigidbody>();
-            ropeController.ropeNodes.Remove(this.transform);
-            ropeController.ropeNodes.Add(newRopeNode.transform);
-            ropeController.ropeNodes.Add(this.transform);
-            joint.connectedBody = newRopeNode.GetComponent<Rigidbody>();
-            ropeEnd = newRopeNode;
+            CreateNewNode();
 
         }
+    }
+
+    private void CreateNewNode()
+    {
+        GameObject newRopeNode = Instantiate(ropeSegmentPrefab, transform.position, Quaternion.identity);
+        newRopeNode.GetComponent<SpringJoint>().connectedBody = ropeEnd.GetComponent<Rigidbody>();
+        ropeController.ropeNodes.Remove(this.transform);
+        ropeController.ropeNodes.Add(newRopeNode.transform);
+        ropeController.ropeNodes.Add(this.transform);
+        joint.connectedBody = newRopeNode.GetComponent<Rigidbody>();
+        ropeEnd = newRopeNode;
     }
 }
