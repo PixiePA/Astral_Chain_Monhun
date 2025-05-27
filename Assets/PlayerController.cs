@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", speed);
 
         //Lerping rotation
-        if (moveInputValue.magnitude >= 0)
+        if (moveInputValue.magnitude > 0)
         {
             float currentRotationInDegrees = GetRotationFromDirection(CurrentMoveDirection);
             float targetRotationInDegrees = GetRotationFromDirection(moveInputValue.normalized);
