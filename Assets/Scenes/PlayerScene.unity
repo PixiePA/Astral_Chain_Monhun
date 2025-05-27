@@ -199,6 +199,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a588bae7704f024c8d745edb707ace2, type: 3}
+--- !u!4 &719634408 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5465940246521907071, guid: 0a588bae7704f024c8d745edb707ace2, type: 3}
+  m_PrefabInstance: {fileID: 316387902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &772249595
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,13 +553,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Composition:
-    ScreenPosition: {x: -0.00000015646219, y: 0.29156825}
+    ScreenPosition: {x: 0.000000074505806, y: 0.13862857}
     DeadZone:
       Enabled: 1
-      Size: {x: 0.15978073, y: 0.2}
+      Size: {x: 0.17989036, y: 0.2}
     HardLimits:
       Enabled: 1
-      Size: {x: 0.59341854, y: 0.8}
+      Size: {x: 0.59341854, y: 0.6156863}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 0, z: 0}
@@ -585,8 +590,8 @@ MonoBehaviour:
   m_LegacyPriority: 0
   Target:
     TrackingTarget: {fileID: 73902337}
-    LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 0
+    LookAtTarget: {fileID: 719634408}
+    CustomLookAtTarget: 1
   Lens:
     FieldOfView: 60.000004
     OrthographicSize: 5
@@ -615,7 +620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732324867}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09546568, y: 0.00000020939736, z: -0.00000002008198, w: 0.99543273}
+  m_LocalRotation: {x: 0.09408794, y: -0.0007843463, z: 0.00007412639, w: 0.9955636}
   m_LocalPosition: {x: 0, y: 2.25, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -830,7 +835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750817805}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09546569, y: 0.00000020939736, z: -0.000000020081982, w: 0.99543273}
+  m_LocalRotation: {x: 0.09408796, y: -0.00078434637, z: 0.0000741264, w: 0.9955636}
   m_LocalPosition: {x: 0, y: 2.25, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
