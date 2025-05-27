@@ -15,7 +15,10 @@ public class RopeController : MonoBehaviour
 
     private void Awake()
     {
-        lineRenderer = GetComponent<LineRenderer>();
+        if (!lineRenderer)
+        {
+            lineRenderer = GetComponent<LineRenderer>();
+        }
     }
 
     void Start()
