@@ -460,8 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d889bace0879e94cb1f0b552dd710df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ropeStart: {fileID: 1612586737}
-  ropeEnd: {fileID: 1612586737}
+  ropeEnd: {fileID: 1507490579}
   ropeController: {fileID: 1507490580}
   distanceBeforeNewNode: 3
   maxNodes: 10
@@ -564,7 +563,7 @@ SpringJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241956058}
   serializedVersion: 3
-  m_ConnectedBody: {fileID: 1612586739}
+  m_ConnectedBody: {fileID: 8217396669130975018}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
@@ -608,27 +607,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1507490579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5080518765334236477, guid: 34bb39600af662f43b89ba06493fa1f8, type: 3}
+  m_PrefabInstance: {fileID: 8217396669130975017}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1507490580 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 263036852966285615, guid: 34bb39600af662f43b89ba06493fa1f8, type: 3}
   m_PrefabInstance: {fileID: 8217396669130975017}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1507490579}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bfa8616928142c49bbbcb0b0df0a86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1612586737 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4051512432030164456, guid: 34bb39600af662f43b89ba06493fa1f8, type: 3}
-  m_PrefabInstance: {fileID: 8217396669130975017}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1612586739 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 6374220805906099536, guid: 34bb39600af662f43b89ba06493fa1f8, type: 3}
-  m_PrefabInstance: {fileID: 8217396669130975017}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8217396669130975017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -686,6 +680,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34bb39600af662f43b89ba06493fa1f8, type: 3}
+--- !u!54 &8217396669130975018 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8424595216166436522, guid: 34bb39600af662f43b89ba06493fa1f8, type: 3}
+  m_PrefabInstance: {fileID: 8217396669130975017}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -21,7 +21,6 @@ public class RopeController : MonoBehaviour
     void Start()
     {
         ropeNodes = new List<Transform>(GetComponentsInChildren<Transform>());
-        ropeNodes.Remove(transform);
     }
 
     // Update is called once per frame

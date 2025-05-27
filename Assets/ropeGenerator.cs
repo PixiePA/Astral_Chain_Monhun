@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ropeGenerator : MonoBehaviour
 {
-    public GameObject ropeStart;
     public GameObject ropeEnd;
     public RopeController ropeController;
     public float distanceBeforeNewNode = 2f;
