@@ -50,7 +50,8 @@ public class BezierCurve
             Points = points;
         }
     }
-
+    
+    //Gets point along bezier curve
     public Vector3 GetSegment(float time)
     {
         time = Mathf.Clamp01(time);
@@ -64,6 +65,8 @@ public class BezierCurve
             Mathf.Pow(time, 3) * Points[3];
     }
 
+
+    //Generates array of points along bezier curve
     public Vector3[] GetSegments(int subdivisions)
     {
         Vector3[] segments = new Vector3[subdivisions];
