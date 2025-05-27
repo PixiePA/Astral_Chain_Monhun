@@ -45,6 +45,7 @@ public class RopeController : MonoBehaviour
                 curves[i] = new BezierCurve(ropeNodes[i - 1].position, ropeNodes[i].position, ropeNodes[i + 1].position, smoothingLength);
             }
 
+            //Lookahead for first bezier curve
             Vector3 nextDirection = (curves[1].EndPositon - curves[1].StartPositon).normalized;
             Vector3 prevDirection = (curves[0].EndPositon - curves[0].StartPositon).normalized;
             curves[0].Points[2] = curves[0].Points[3] + (prevDirection + nextDirection) * -smoothingLength;
@@ -58,6 +59,7 @@ public class RopeController : MonoBehaviour
                 Vector3[] segments = curves[i].GetSegments(smoothingSegments);
                 for (int j = 0; j < segments.Length; j++)
                 {
+                    //if statement prevents repeat points
                     if (j < segments.Length - 1 || i == curves.Length - 1)
                     {
                         lineRenderer.SetPosition(index, segments[j]);
