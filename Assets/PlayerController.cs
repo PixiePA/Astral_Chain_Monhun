@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using static UnityEngine.Rendering.DebugUI;
 
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
@@ -23,6 +24,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField][Range(0f, 1f)]
     private float speedToTargetSpeedLerpRate = 0.3f;
 
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float rotateToTargetSpeedLerpRate = 0.3f;
+
     [SerializeField][Range(-1f, 1f)]
     private float lean;
 
@@ -41,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     //Behind the scenes values
     private Vector2 moveInputValue;
+    private Vector2 rawMoveInputValue;
     private float targetSpeed;
 
     private Vector2 CurrentMoveDirection
@@ -76,23 +82,78 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
+        UpdateMoveInput();
     }
 
     private void FixedUpdate()
     {
+        //Lerping speed
         speed = Mathf.Lerp(speed, targetSpeed, speedToTargetSpeedLerpRate);
-        Debug.Log(targetSpeed);
 
         animator.SetFloat("Speed", speed);
+
+        //Lerping rotation
+        if (moveInputValue.magnitude >= 0)
+        {
+            float currentRotationInDegrees = GetRotationFromDirection(CurrentMoveDirection);
+            float targetRotationInDegrees = GetRotationFromDirection(moveInputValue.normalized);
+            float rotationDifference  = targetRotationInDegrees - currentRotationInDegrees;
+            if (rotationDifference > 180) 
+            {
+                rotationDifference -= 360;
+            }
+            else if (rotationDifference < -180)
+            {
+                rotationDifference += 360;
+            }
+            float newRotation = currentRotationInDegrees + rotationDifference * rotateToTargetSpeedLerpRate;
+            playerCharacter.transform.localRotation = Quaternion.Euler(new Vector3(0, newRotation, 0));
+
+            lean = Mathf.Clamp(rotationDifference/30, -1, 1);
+
+            float animatorLean = Mathf.Lerp(animator.GetFloat("Lean"), lean, rotateToTargetSpeedLerpRate);
+            animator.SetFloat("Lean", animatorLean);
+        }
     }
 
     public void OnMove(InputValue value)
     {
-        Vector2 newMoveValue = value.Get<Vector2>();
-        lean = newMoveValue.x;
+        rawMoveInputValue = value.Get<Vector2>();
+        UpdateMoveInput();
+    }
+
+    public void OnLook(InputValue value)
+    {
+        UpdateMoveInput();
+    }
+
+    public void OnSprint(InputValue value)
+    {
+        isSprinting = !isSprinting;
+    }
+
+    private float GetRotationFromDirection(Vector2 direction)
+    {
+        return Mathf.Rad2Deg*GetRadiansFromDirection(direction);
+    }
+
+    private float GetRadiansFromDirection(Vector2 direction)
+    {
+        return Mathf.Atan2(direction.x, direction.y);
+    }
+
+    private Vector2 RotateVector2AroundRadians(Vector2 direction, float radians)
+    {
+        // Rotate angle by given radians
+        return new Vector2(
+            direction.x * Mathf.Cos(radians) - direction.y * Mathf.Sin(radians), 
+            direction.x * Mathf.Sin(radians) + direction.y * Mathf.Cos(radians)
+            );
+    }
+
+    private void UpdateMoveInput()
+    {
+        Vector2 newMoveValue = RotateVector2AroundRadians(rawMoveInputValue, -GetRadiansFromDirection(CurrentCameraDirection));
         moveInputValue = newMoveValue;
         targetSpeed = moveInputValue.sqrMagnitude;
 
@@ -106,19 +167,6 @@ public class PlayerController : MonoBehaviour
         {
             isSprinting = false;
         }
-
-        animator.SetFloat("Lean", lean);
     }
-
-    public void OnSprint(InputValue value)
-    {
-        isSprinting = !isSprinting;
-    }
-
-    private float GetRotationFromDirection(Vector2 direction)
-    {
-        throw new NotImplementedException();
-    }
-
     
 }
