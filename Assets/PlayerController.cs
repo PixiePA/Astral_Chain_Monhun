@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -46,7 +47,15 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
-            return new Vector2(playerCharacter.transform.forward.x, playerCharacter.transform.forward.z);
+            return new Vector2(playerCharacter.transform.forward.x, playerCharacter.transform.forward.z).normalized;
+        }
+    }
+
+    private Vector2 CurrentCameraDirection
+    {
+        get
+        {
+            return new Vector2(playerCamera.transform.forward.x, playerCamera.transform.forward.z).normalized;
         }
     }
 
@@ -104,6 +113,11 @@ public class PlayerController : MonoBehaviour
     public void OnSprint(InputValue value)
     {
         isSprinting = !isSprinting;
+    }
+
+    private float GetRotationFromDirection(Vector2 direction)
+    {
+        throw new NotImplementedException();
     }
 
     

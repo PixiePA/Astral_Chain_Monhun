@@ -25,15 +25,26 @@ public class BezierCurve
     {
         Points = new Vector3[4];
     }
-    
-    //Creates bezier curve given parameters
+
+    /// <summary>
+    /// Creates a new bezier curve with points using given values
+    /// <param name="prevPosition">Position of the last point<param>  
+    /// <param name="position">Position of the current point</param>
+    /// <param name="nextPosition">Position of the next point<param>  
+    /// <param name="smoothingLength">how extreme should the curve be</param>
+    /// </summary> 
     public BezierCurve(Vector3 prevPosition, Vector3 position, Vector3 nextPosition, float smoothingLength)
     {
         Points = GetPoints(prevPosition, position, nextPosition, smoothingLength);
     }
 
 
-    //Creates first bezier curve
+    /// <summary>
+    /// Creates a new bezier curve when theres no previous point
+    /// <param name="position">Position of the current point</param>
+    /// <param name="nextPosition">Position of the next point<param>  
+    /// <param name="smoothingLength">how extreme should the curve be</param>  
+    /// </summary> 
     public BezierCurve(Vector3 position, Vector3 nextPosition, float smoothingLength)
     {
         Points = GetPoints(position, position, nextPosition, smoothingLength);
