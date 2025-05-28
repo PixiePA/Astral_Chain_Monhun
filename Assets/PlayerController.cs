@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -98,57 +99,16 @@ public class PlayerController : MonoBehaviour
     {
         UpdateMoveInput();
 
-        //Lerping speed
-        if (Mathf.Abs(inputSpeed - targetSpeed) < 0.1)
+        LerpSpeedAndRotation();
+
+        UpdatePlayerVelocity();
+
+        // If close enough to ground, snap
+        if (Physics.Raycast(playerCharacter.transform.position, Vector3.down, out RaycastHit hitInfo, 0.15f, 8))
         {
-            inputSpeed = targetSpeed;
+            playerRb.AddForce(Vector3.down * 100, ForceMode.Impulse);
+            Debug.Log("IS GROUNDED");
         }
-        else
-        {
-            inputSpeed = Mathf.Lerp(inputSpeed, targetSpeed, speedToTargetSpeedLerpRate);
-        }
-
-        //Lerping rotation
-        if (moveInputValue.magnitude > 0)
-        {
-            float currentRotationInDegrees = GetRotationFromDirection(CurrentMoveDirection);
-            float targetRotationInDegrees = GetRotationFromDirection(moveInputValue.normalized);
-            float rotationDifference  = targetRotationInDegrees - currentRotationInDegrees;
-            if (rotationDifference > 180) 
-            {
-                rotationDifference -= 360;
-            }
-            else if (rotationDifference < -180)
-            {
-                rotationDifference += 360;
-            }
-            float newRotation = currentRotationInDegrees + rotationDifference * rotateToTargetSpeedLerpRate;
-            playerCharacter.transform.localRotation = Quaternion.Euler(new Vector3(0, newRotation, 0));
-
-            lean = Mathf.Clamp(rotationDifference/maxLeanTurnRate, -1, 1);
-
-            float animatorLean = Mathf.Lerp(animator.GetFloat("Lean"), lean, rotateToTargetSpeedLerpRate);
-            animator.SetFloat("Lean", animatorLean);
-        }
-
-        // Use speed to calculate the desired velocity of the player
-        float trueSpeed;
-        if (inputSpeed < runThreshold)
-        {
-            trueSpeed = Mathf.Lerp(0f, walkSpeed, inputSpeed / runThreshold);
-        }
-        else
-        {
-            trueSpeed = Mathf.Lerp(walkSpeed, runSpeed, (inputSpeed - runThreshold) / (1 - runThreshold));
-        }
-
-        animator.SetFloat("Speed", trueSpeed);
-
-        Vector3 desiredHorizontalVelocity = playerCharacter.transform.forward * trueSpeed;
-        Vector3 velocityDifference = desiredHorizontalVelocity - playerRb.linearVelocity;
-        Vector3 horizontalVelocityDifference = new Vector3(velocityDifference.x, 0, velocityDifference.z);
-
-        playerRb.AddForce(horizontalVelocityDifference, ForceMode.VelocityChange);
     }
 
     public void OnMove(InputValue value)
@@ -203,5 +163,62 @@ public class PlayerController : MonoBehaviour
             isSprinting = false;
         }
     }
-    
+
+    private void UpdatePlayerVelocity()
+    {
+        // Use speed to calculate the desired velocity of the player
+        float trueSpeed;
+        if (inputSpeed < runThreshold)
+        {
+            trueSpeed = Mathf.Lerp(0f, walkSpeed, inputSpeed / runThreshold);
+        }
+        else
+        {
+            trueSpeed = Mathf.Lerp(walkSpeed, runSpeed, (inputSpeed - runThreshold) / (1 - runThreshold));
+        }
+
+        animator.SetFloat("Speed", trueSpeed);
+
+        Vector3 desiredHorizontalVelocity = playerCharacter.transform.forward * trueSpeed;
+        Vector3 velocityDifference = desiredHorizontalVelocity - playerRb.linearVelocity;
+        Vector3 horizontalVelocityDifference = new Vector3(velocityDifference.x, 0, velocityDifference.z);
+
+        playerRb.AddForce(horizontalVelocityDifference, ForceMode.VelocityChange);
+    }
+
+    private void LerpSpeedAndRotation()
+    {
+        //Lerping speed
+        if (Mathf.Abs(inputSpeed - targetSpeed) < 0.1)
+        {
+            inputSpeed = targetSpeed;
+        }
+        else
+        {
+            inputSpeed = Mathf.Lerp(inputSpeed, targetSpeed, speedToTargetSpeedLerpRate);
+        }
+
+        //Lerping rotation
+        if (moveInputValue.magnitude > 0)
+        {
+            float currentRotationInDegrees = GetRotationFromDirection(CurrentMoveDirection);
+            float targetRotationInDegrees = GetRotationFromDirection(moveInputValue.normalized);
+            float rotationDifference = targetRotationInDegrees - currentRotationInDegrees;
+            if (rotationDifference > 180)
+            {
+                rotationDifference -= 360;
+            }
+            else if (rotationDifference < -180)
+            {
+                rotationDifference += 360;
+            }
+            float newRotation = currentRotationInDegrees + rotationDifference * rotateToTargetSpeedLerpRate;
+            playerCharacter.transform.localRotation = Quaternion.Euler(new Vector3(0, newRotation, 0));
+
+            lean = Mathf.Clamp(rotationDifference / maxLeanTurnRate, -1, 1);
+
+            float animatorLean = Mathf.Lerp(animator.GetFloat("Lean"), lean, rotateToTargetSpeedLerpRate);
+            animator.SetFloat("Lean", animatorLean);
+        }
+    }
 }
