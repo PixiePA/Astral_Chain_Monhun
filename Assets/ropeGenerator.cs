@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SpringJoint))]
+[RequireComponent(typeof(Joint))]
 public class ropeGenerator : MonoBehaviour
 {
     public GameObject ropeEnd;
@@ -8,14 +8,14 @@ public class ropeGenerator : MonoBehaviour
     public float distanceBeforeNewNode = 2f;
     public int maxNodes = 10;
     [SerializeField] private GameObject ropeSegmentPrefab;
-    [SerializeField] private SpringJoint joint;
+    [SerializeField] private Joint joint;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Awake()
     {
         if (!joint)
         {
-            joint = GetComponent<SpringJoint>();
+            joint = GetComponent<Joint>();
         }
     }
 
@@ -39,7 +39,7 @@ public class ropeGenerator : MonoBehaviour
     private void CreateNewNode()
     {
         GameObject newRopeNode = Instantiate(ropeSegmentPrefab, transform.position, Quaternion.identity);
-        newRopeNode.GetComponent<SpringJoint>().connectedBody = ropeEnd.GetComponent<Rigidbody>();
+        newRopeNode.GetComponent<Joint>().connectedBody = ropeEnd.GetComponent<Rigidbody>();
         ropeController.ropeNodes.Remove(this.transform);
         ropeController.ropeNodes.Add(newRopeNode.transform);
         ropeController.ropeNodes.Add(this.transform);

@@ -19,11 +19,12 @@ public class RopeController : MonoBehaviour
         {
             lineRenderer = GetComponent<LineRenderer>();
         }
+        ropeNodes = new List<Transform>(GetComponentsInChildren<Transform>());
     }
 
     void Start()
     {
-        ropeNodes = new List<Transform>(GetComponentsInChildren<Transform>());
+        
 
     }
 

@@ -171,8 +171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 5495930150161913354}
-  smoothingSegments: 10
-  smoothingLength: 1
+  smoothingSegments: 4
+  smoothingLength: 0.2
   ropeNodes: []
 --- !u!54 &8424595216166436522
 Rigidbody:

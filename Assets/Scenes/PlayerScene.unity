@@ -479,6 +479,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 210238995}
     - target: {fileID: 3706400600101451863, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
+      propertyPath: maxNodes
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706400600101451863, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
       propertyPath: ropeController
       value: 
       objectReference: {fileID: 210238993}
@@ -520,6 +524,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6358116118833502091, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940109430369195663, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

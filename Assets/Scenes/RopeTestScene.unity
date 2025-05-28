@@ -502,18 +502,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9142796777921177457, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
-      propertyPath: m_Spring
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142796777921177457, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
-      propertyPath: m_MinDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142796777921177457, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
-      propertyPath: m_ConnectedBody
-      value: 
-      objectReference: {fileID: 8217396669130975018}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -576,11 +564,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34bb39600af662f43b89ba06493fa1f8, type: 3}
---- !u!54 &8217396669130975018 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 8424595216166436522, guid: 34bb39600af662f43b89ba06493fa1f8, type: 3}
-  m_PrefabInstance: {fileID: 8217396669130975017}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
