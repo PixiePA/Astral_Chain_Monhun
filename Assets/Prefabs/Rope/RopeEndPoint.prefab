@@ -50,7 +50,7 @@ MonoBehaviour:
   ropeEnd: {fileID: 0}
   ropeController: {fileID: 0}
   distanceBeforeNewNode: 1
-  maxNodes: 30
+  maxNodes: 11
   ropeSegmentPrefab: {fileID: 3730935307845442023, guid: ad59d58248729404da0be925ec908810, type: 3}
   joint: {fileID: 0}
 --- !u!54 &6940109430369195663
