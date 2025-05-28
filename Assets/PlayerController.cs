@@ -104,10 +104,9 @@ public class PlayerController : MonoBehaviour
         UpdatePlayerVelocity();
 
         // If close enough to ground, snap
-        if (Physics.Raycast(playerCharacter.transform.position, Vector3.down, out RaycastHit hitInfo, 0.15f, 8))
+        if (Physics.Raycast(playerCharacter.transform.position, Vector3.down, out RaycastHit hitInfo, 0.3f, 8))
         {
             playerRb.AddForce(Vector3.down * 100, ForceMode.Impulse);
-            Debug.Log("IS GROUNDED");
         }
     }
 
