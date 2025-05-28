@@ -459,10 +459,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1507490579}
     - target: {fileID: 3706400600101451863, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
-      propertyPath: maxNodes
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3706400600101451863, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
       propertyPath: ropeController
       value: 
       objectReference: {fileID: 1507490580}
