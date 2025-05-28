@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public float runThreshold = 0.3f;
 
     [SerializeField][Range(0f, 1f)]
-    private float speed;
+    private float inputSpeed;
 
     [SerializeField][Range(0f, 1f)]
     private float sprintSpeed = 0.6f;
@@ -99,13 +99,13 @@ public class PlayerController : MonoBehaviour
         UpdateMoveInput();
 
         //Lerping speed
-        if (Mathf.Abs(speed - targetSpeed) < 0.1)
+        if (Mathf.Abs(inputSpeed - targetSpeed) < 0.1)
         {
-            speed = targetSpeed;
+            inputSpeed = targetSpeed;
         }
         else
         {
-            speed = Mathf.Lerp(speed, targetSpeed, speedToTargetSpeedLerpRate);
+            inputSpeed = Mathf.Lerp(inputSpeed, targetSpeed, speedToTargetSpeedLerpRate);
         }
 
         //Lerping rotation
@@ -131,14 +131,15 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("Lean", animatorLean);
         }
 
+        // Use speed to calculate the desired velocity of the player
         float trueSpeed;
-        if (speed < runThreshold)
+        if (inputSpeed < runThreshold)
         {
-            trueSpeed = Mathf.Lerp(0f, walkSpeed, speed / runThreshold);
+            trueSpeed = Mathf.Lerp(0f, walkSpeed, inputSpeed / runThreshold);
         }
         else
         {
-            trueSpeed = Mathf.Lerp(walkSpeed, runSpeed, (speed - runThreshold) / (1 - runThreshold));
+            trueSpeed = Mathf.Lerp(walkSpeed, runSpeed, (inputSpeed - runThreshold) / (1 - runThreshold));
         }
 
         animator.SetFloat("Speed", trueSpeed);
