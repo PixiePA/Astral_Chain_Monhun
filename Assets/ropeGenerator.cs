@@ -22,6 +22,7 @@ public class ropeGenerator : MonoBehaviour
     void Start()
     {
         ropeController.ropeNodes.Add(transform);
+        joint.connectedBody = ropeEnd.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame

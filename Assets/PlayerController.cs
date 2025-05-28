@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     private float sprintSpeed = 0.6f;
 
     [SerializeField][Range(0f, 1f)]
+    private float sprintStopSpeed = 0.6f;
+
+    [SerializeField][Range(0f, 1f)]
     private float speedToTargetSpeedLerpRate = 0.3f;
 
     [SerializeField]
@@ -30,6 +33,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField][Range(-1f, 1f)]
     private float lean;
+
+    [SerializeField]
+    private float maxLeanTurnRate = 15f;
 
     [SerializeField]
     private bool isSprinting;
@@ -42,6 +48,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private GameObject playerCamera;
+
+    [SerializeField]
+    private Rigidbody playerRb;
 
 
     //Behind the scenes values
@@ -82,15 +91,22 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateMoveInput();
+
     }
 
     private void FixedUpdate()
     {
-        //Lerping speed
-        speed = Mathf.Lerp(speed, targetSpeed, speedToTargetSpeedLerpRate);
+        UpdateMoveInput();
 
-        animator.SetFloat("Speed", speed);
+        //Lerping speed
+        if (Mathf.Abs(speed - targetSpeed) < 0.1)
+        {
+            speed = targetSpeed;
+        }
+        else
+        {
+            speed = Mathf.Lerp(speed, targetSpeed, speedToTargetSpeedLerpRate);
+        }
 
         //Lerping rotation
         if (moveInputValue.magnitude > 0)
@@ -109,11 +125,29 @@ public class PlayerController : MonoBehaviour
             float newRotation = currentRotationInDegrees + rotationDifference * rotateToTargetSpeedLerpRate;
             playerCharacter.transform.localRotation = Quaternion.Euler(new Vector3(0, newRotation, 0));
 
-            lean = Mathf.Clamp(rotationDifference/30, -1, 1);
+            lean = Mathf.Clamp(rotationDifference/maxLeanTurnRate, -1, 1);
 
             float animatorLean = Mathf.Lerp(animator.GetFloat("Lean"), lean, rotateToTargetSpeedLerpRate);
             animator.SetFloat("Lean", animatorLean);
         }
+
+        float trueSpeed;
+        if (speed < runThreshold)
+        {
+            trueSpeed = Mathf.Lerp(0f, walkSpeed, speed / runThreshold);
+        }
+        else
+        {
+            trueSpeed = Mathf.Lerp(walkSpeed, runSpeed, (speed - runThreshold) / (1 - runThreshold));
+        }
+
+        animator.SetFloat("Speed", trueSpeed);
+
+        Vector3 desiredHorizontalVelocity = playerCharacter.transform.forward * trueSpeed;
+        Vector3 velocityDifference = desiredHorizontalVelocity - playerRb.linearVelocity;
+        Vector3 horizontalVelocityDifference = new Vector3(velocityDifference.x, 0, velocityDifference.z);
+
+        playerRb.AddForce(horizontalVelocityDifference, ForceMode.VelocityChange);
     }
 
     public void OnMove(InputValue value)
@@ -163,7 +197,7 @@ public class PlayerController : MonoBehaviour
             targetSpeed = Mathf.Min(targetSpeed, sprintSpeed);
         }
 
-        if (targetSpeed < sprintSpeed)
+        if (targetSpeed < sprintStopSpeed)
         {
             isSprinting = false;
         }

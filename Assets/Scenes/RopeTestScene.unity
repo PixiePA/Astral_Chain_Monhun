@@ -503,6 +503,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9142796777921177457, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
+      propertyPath: m_Spring
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142796777921177457, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
+      propertyPath: m_MinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142796777921177457, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 8217396669130975018}
