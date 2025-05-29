@@ -19,7 +19,7 @@ public class RopeRenderer : MonoBehaviour
         {
             lineRenderer = GetComponent<LineRenderer>();
         }
-        ropeNodes = new List<Transform>(GetComponentsInChildren<Transform>());
+        InitializeNodeList();
     }
 
     void Start()
@@ -46,6 +46,24 @@ public class RopeRenderer : MonoBehaviour
                 lineRenderer.SetPosition(i, ropeNodes[i].position);
             }
         }
+    }
+
+    public void InitializeNodeList()
+    {
+        ropeNodes = new List<Transform>();
+        ropeNodes.Add(transform);
+    }
+
+    public void InitializeNodeList(Transform initialEndPoint)
+    {
+        InitializeNodeList();
+        ropeNodes.Add(initialEndPoint);
+    }
+
+    public void InitializeNodeList(Transform[] ropeNodeList)
+    {
+        InitializeNodeList();
+        ropeNodes.AddRange(ropeNodeList);
     }
 
     private void DrawBezierCurves(BezierCurve[] curves)
@@ -95,5 +113,13 @@ public class RopeRenderer : MonoBehaviour
         }
 
         return new BezierCurve[] { };
+    }
+
+    private void OnDrawGizmos()
+    {
+        foreach (Transform transform in ropeNodes)
+        {
+            Debug.DrawLine(transform.position, transform.position + Vector3.up * 0.5f, Color.red);
+        }
     }
 }
