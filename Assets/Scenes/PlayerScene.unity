@@ -168,7 +168,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73902335}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 940f4f1399d124a44956df6a8167d1fa, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -180,10 +180,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.3
+  m_Height: 1.6
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &177549266
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 177549269}
   - component: {fileID: 177549268}
   - component: {fileID: 177549267}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 778683566}
   - component: {fileID: 778683565}
   - component: {fileID: 778683564}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,7 +909,7 @@ MonoBehaviour:
   walkSpeed: 0.8570522
   runSpeed: 5.687158
   runThreshold: 0.3
-  speed: 0
+  inputSpeed: 0
   sprintSpeed: 0.8
   sprintStopSpeed: 0.6
   speedToTargetSpeedLerpRate: 0.3
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 1646992553}
   - component: {fileID: 1646992552}
   - component: {fileID: 1646992551}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

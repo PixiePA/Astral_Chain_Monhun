@@ -28,12 +28,21 @@ public class ropeGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ((transform.position - GetSecondLastNode().transform.position).magnitude < distanceBeforeNewNode && ropeController.ropeNodes.Count > 2)
+        {
+            ropeController.ropeNodes.Remove(ropeEnd.transform);
+            Destroy(ropeEnd);
+            ropeEnd = GetSecondLastNode();
+            joint.connectedBody = ropeEnd.GetComponent<Rigidbody>();
+        }
+
         //Generates new rope notes if far enough away
         if ((transform.position - ropeEnd.transform.position).magnitude > distanceBeforeNewNode && ropeController.ropeNodes.Count <= maxNodes)
         {
             CreateNewNode();
 
         }
+
     }
 
     private void CreateNewNode()
@@ -45,5 +54,10 @@ public class ropeGenerator : MonoBehaviour
         ropeController.ropeNodes.Add(this.transform);
         joint.connectedBody = newRopeNode.GetComponent<Rigidbody>();
         ropeEnd = newRopeNode;
+    }
+
+    private GameObject GetSecondLastNode()
+    {
+        return ropeEnd = ropeController.ropeNodes[ropeController.ropeNodes.Count - 2].gameObject;
     }
 }
