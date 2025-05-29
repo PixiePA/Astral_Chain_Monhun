@@ -50,7 +50,7 @@ MonoBehaviour:
   ropeEnd: {fileID: 0}
   ropeController: {fileID: 0}
   distanceBeforeNewNode: 1
-  reelForce: 200
+  reelForce: 50
   maxNodes: 11
   ropeSegmentPrefab: {fileID: 3730935307845442023, guid: ad59d58248729404da0be925ec908810, type: 3}
   joint: {fileID: 0}
@@ -106,7 +106,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 2.9
+    limit: 1
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:

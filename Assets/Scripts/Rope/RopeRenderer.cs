@@ -5,7 +5,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
-public class RopeController : MonoBehaviour
+public class RopeRenderer : MonoBehaviour
 {
     [SerializeField] private LineRenderer lineRenderer;
     public int smoothingSegments = 10;
@@ -35,6 +35,43 @@ public class RopeController : MonoBehaviour
         //Giving line renderer points
         if (ropeNodes.Count > 2)
         {
+            DrawBezierCurves(GenerateCurvesAlongRopeNodes());
+        }
+        else
+        {
+            //Draw between the 0 to 2 points with no smoothing
+            lineRenderer.positionCount = ropeNodes.Count;
+            for (int i = 0; i < ropeNodes.Count; i++)
+            {
+                lineRenderer.SetPosition(i, ropeNodes[i].position);
+            }
+        }
+    }
+
+    private void DrawBezierCurves(BezierCurve[] curves)
+    {
+        //Add segments to line renderer
+        int index = 0;
+
+        for (int i = 0; i < curves.Length; i++)
+        {
+            Vector3[] segments = curves[i].GetSegments(smoothingSegments);
+            for (int j = 0; j < segments.Length; j++)
+            {
+                //if statement prevents repeat points
+                if (j < segments.Length - 1 || i == curves.Length - 1)
+                {
+                    lineRenderer.SetPosition(index, segments[j]);
+                    index++;
+                }
+            }
+        }
+    }
+
+    private BezierCurve[] GenerateCurvesAlongRopeNodes()
+    {
+        if (ropeNodes.Count > 1)
+        {
             //Setting up bezier curves through nodes
             BezierCurve[] curves = new BezierCurve[ropeNodes.Count - 1];
             lineRenderer.positionCount = (curves.Length - 1) * (smoothingSegments - 1) + smoothingSegments;
@@ -54,32 +91,9 @@ public class RopeController : MonoBehaviour
             Vector3 prevDirection = (curves[0].EndPositon - curves[0].StartPositon).normalized;
             curves[0].Points[2] = curves[0].Points[3] + (prevDirection + nextDirection) * -smoothingLength;
 
-
-            //Add segments to line renderer
-            int index = 0;
-
-            for (int i = 0; i < curves.Length; i++)
-            {
-                Vector3[] segments = curves[i].GetSegments(smoothingSegments);
-                for (int j = 0; j < segments.Length; j++)
-                {
-                    //if statement prevents repeat points
-                    if (j < segments.Length - 1 || i == curves.Length - 1)
-                    {
-                        lineRenderer.SetPosition(index, segments[j]);
-                        index++;
-                    }
-                }
-            }
+            return curves;
         }
-        else
-        {
-            //Draw between the 0 to 2 points with no smoothing
-            lineRenderer.positionCount = ropeNodes.Count;
-            for (int i = 0; i < ropeNodes.Count; i++)
-            {
-                lineRenderer.SetPosition(i, ropeNodes[i].position);
-            }
-        }
+
+        return new BezierCurve[] { };
     }
 }

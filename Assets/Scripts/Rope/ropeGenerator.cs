@@ -4,9 +4,9 @@ using UnityEngine;
 public class ropeGenerator : MonoBehaviour
 {
     public GameObject ropeEnd;
-    public RopeController ropeController;
+    public RopeRenderer ropeController;
     public float distanceBeforeNewNode = 2f;
-    public float reelForce = 200f;
+    public float reelForce = 50f;
     public int maxNodes = 10;
     [SerializeField] private GameObject ropeSegmentPrefab;
     [SerializeField] private Joint joint;
@@ -29,17 +29,10 @@ public class ropeGenerator : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //Shortens rope if next node can be easily reached
         if ((transform.position - GetSecondLastNode().transform.position).magnitude < distanceBeforeNewNode && ropeController.ropeNodes.Count > 2)
         {
-            ropeEnd.GetComponent<Rigidbody>().AddForce((transform.position - ropeEnd.transform.position).normalized * reelForce, ForceMode.Acceleration);
-
-            if ((transform.position - ropeEnd.transform.position).magnitude < 0.3f)
-            {
-                ropeController.ropeNodes.Remove(ropeEnd.transform);
-                Destroy(ropeEnd);
-                ropeEnd = GetSecondLastNode();
-                joint.connectedBody = ropeEnd.GetComponent<Rigidbody>();
-            }
+            ReelInRope();
         }
 
         //Generates new rope notes if far enough away
@@ -64,6 +57,23 @@ public class ropeGenerator : MonoBehaviour
 
     private GameObject GetSecondLastNode()
     {
-        return ropeEnd = ropeController.ropeNodes[ropeController.ropeNodes.Count - 2].gameObject;
+        return ropeController.ropeNodes[ropeController.ropeNodes.Count - 2].gameObject;
+
+    }
+
+    private void ReelInRope()
+    {
+        // Pulls in last node
+        ropeEnd.GetComponent<Rigidbody>().AddForce((transform.position - ropeEnd.transform.position).normalized * reelForce, ForceMode.Acceleration);
+
+
+        //Deletes last node if close enough
+        if ((transform.position - ropeEnd.transform.position).magnitude < 0.3f)
+        {
+            ropeController.ropeNodes.Remove(ropeEnd.transform);
+            Destroy(ropeEnd);
+            ropeEnd = GetSecondLastNode();
+            joint.connectedBody = ropeEnd.GetComponent<Rigidbody>();
+        }
     }
 }
