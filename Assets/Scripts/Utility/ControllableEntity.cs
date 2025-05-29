@@ -121,7 +121,7 @@ public class ControllableEntity : MonoBehaviour
         }
 
         //Lerping rotation
-        if (moveInputValue.magnitude > 0)
+        if (moveInputValue.sqrMagnitude > 0)
         {
             float currentRotationInDegrees = GetRotationFromDirection(CurrentMoveDirection);
             float targetRotationInDegrees = GetRotationFromDirection(moveInputValue.normalized);

@@ -7,12 +7,29 @@ public class ropeGenerator : MonoBehaviour
     public GameObject ropeEnd;
     public RopeRenderer ropeRenderer;
     public float distanceBeforeNewNode = 2f;
-    public float reelForce = 50f;
+    public float nodeKillDistance = 0.3f;
+    public float reelForce = 300f;
     public int maxNodes = 10;
     [SerializeField] private GameObject ropeSegmentPrefab;
     [SerializeField] private Joint joint;
     public bool isBinding;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public float sqrDistanceBeforeNewNode
+    {
+        get
+        {
+            return distanceBeforeNewNode * distanceBeforeNewNode;
+        }
+    }
+
+    public float sqrNodeKillDistance
+    {
+        get
+        {
+            return nodeKillDistance * nodeKillDistance;
+        }
+    }
 
     private void Awake()
     {
@@ -45,12 +62,16 @@ public class ropeGenerator : MonoBehaviour
         {
             
             //Shortens rope if next node can be easily reached
-            if (ropeRenderer.ropeNodes.Count > 2)
+            if (ropeRenderer.ropeNodes.Count > 3)
             {
                 bool ropeTooLong = false;
-                foreach (Transform transform in ropeRenderer.ropeNodes)
+                for (int i = 0; i < ropeRenderer.ropeNodes.Count - 2; i++)
                 {
-                    if ((transform.position - this.transform.position).magnitude < distanceBeforeNewNode) ropeTooLong = true;
+                    if ((transform.position - ropeRenderer.ropeNodes[i].position).sqrMagnitude < sqrDistanceBeforeNewNode)
+                    {
+                        ropeTooLong = true;
+                        break;
+                    }
                 }
 
                 if (ropeTooLong)
@@ -60,7 +81,7 @@ public class ropeGenerator : MonoBehaviour
             }
 
             //Generates new rope notes if far enough away
-            if ((transform.position - ropeEnd.transform.position).magnitude > distanceBeforeNewNode && ropeRenderer.ropeNodes.Count <= maxNodes)
+            if ((transform.position - ropeEnd.transform.position).sqrMagnitude > sqrDistanceBeforeNewNode && ropeRenderer.ropeNodes.Count <= maxNodes)
             {
                 CreateNewNode();
 
@@ -113,7 +134,7 @@ public class ropeGenerator : MonoBehaviour
         ropeEnd.GetComponent<Rigidbody>().AddForce((transform.position - ropeEnd.transform.position).normalized * reelForce, ForceMode.Acceleration);
 
         //Deletes last node if close enough
-        if ((transform.position - ropeEnd.transform.position).magnitude < 0.3f && ropeRenderer.ropeNodes.Count > 2)
+        if ((transform.position - ropeEnd.transform.position).sqrMagnitude < sqrNodeKillDistance && ropeRenderer.ropeNodes.Count > 3)
         {
             ropeRenderer.ropeNodes.Remove(ropeEnd.transform);
             Destroy(ropeEnd);
@@ -133,11 +154,11 @@ public class ropeGenerator : MonoBehaviour
 
 
         // Loops creating new nodes evenly until last node is close enough to end
-        float distance = (transform.position - ropeRenderer.transform.position).magnitude;
-        while (distance > distanceBeforeNewNode)
+        float sqrDistance = (transform.position - ropeRenderer.transform.position).sqrMagnitude;
+        while (sqrDistance > sqrDistanceBeforeNewNode)
         {
             CreateNewNode(ropeEnd.transform.position + ((transform.position - ropeEnd.transform.position).normalized * distanceBeforeNewNode));
-            distance = (transform.position - ropeEnd.transform.position).magnitude;
+            sqrDistance = (transform.position - ropeEnd.transform.position).magnitude;
         }
 
     }

@@ -71,7 +71,7 @@ public class PlayerController : ControllableEntity
     {
         Vector2 newMoveValue = RotateVector2AroundRadians(rawMoveInputValue, -GetRadiansFromDirection(CurrentCameraDirection));
         moveInputValue = newMoveValue;
-        targetSpeed = moveInputValue.sqrMagnitude;
+        targetSpeed = moveInputValue.magnitude;
 
         //Cap speed if is not sprinting
         if (!isSprinting)

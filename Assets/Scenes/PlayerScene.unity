@@ -699,8 +699,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 210238995}
     - target: {fileID: 3706400600101451863, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
+      propertyPath: maxNodes
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706400600101451863, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
       propertyPath: reelForce
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3706400600101451863, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
       propertyPath: ropeRenderer
