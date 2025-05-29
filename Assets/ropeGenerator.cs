@@ -6,6 +6,7 @@ public class ropeGenerator : MonoBehaviour
     public GameObject ropeEnd;
     public RopeController ropeController;
     public float distanceBeforeNewNode = 2f;
+    public float reelForce = 200f;
     public int maxNodes = 10;
     [SerializeField] private GameObject ropeSegmentPrefab;
     [SerializeField] private Joint joint;
@@ -26,14 +27,19 @@ public class ropeGenerator : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if ((transform.position - GetSecondLastNode().transform.position).magnitude < distanceBeforeNewNode && ropeController.ropeNodes.Count > 2)
         {
-            ropeController.ropeNodes.Remove(ropeEnd.transform);
-            Destroy(ropeEnd);
-            ropeEnd = GetSecondLastNode();
-            joint.connectedBody = ropeEnd.GetComponent<Rigidbody>();
+            ropeEnd.GetComponent<Rigidbody>().AddForce((transform.position - ropeEnd.transform.position).normalized * reelForce, ForceMode.Acceleration);
+
+            if ((transform.position - ropeEnd.transform.position).magnitude < 0.3f)
+            {
+                ropeController.ropeNodes.Remove(ropeEnd.transform);
+                Destroy(ropeEnd);
+                ropeEnd = GetSecondLastNode();
+                joint.connectedBody = ropeEnd.GetComponent<Rigidbody>();
+            }
         }
 
         //Generates new rope notes if far enough away

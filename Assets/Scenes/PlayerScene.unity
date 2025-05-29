@@ -699,10 +699,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 210238995}
     - target: {fileID: 3706400600101451863, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
-      propertyPath: maxNodes
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3706400600101451863, guid: f324ca8ccc8a6fb4f9db7afe38684fb2, type: 3}
       propertyPath: ropeController
       value: 
       objectReference: {fileID: 210238993}
@@ -910,17 +906,17 @@ MonoBehaviour:
   runSpeed: 5.687158
   runThreshold: 0.3
   inputSpeed: 0
-  sprintSpeed: 0.8
-  sprintStopSpeed: 0.6
   speedToTargetSpeedLerpRate: 0.3
   rotateToTargetSpeedLerpRate: 0.3
   lean: 0
   maxLeanTurnRate: 15
-  isSprinting: 0
   animator: {fileID: 73902336}
-  playerCharacter: {fileID: 73902335}
+  entityCharacter: {fileID: 73902335}
+  entityRb: {fileID: 73902338}
+  sprintSpeed: 0.8
+  sprintStopSpeed: 0.6
+  isSprinting: 0
   playerCamera: {fileID: 1732324867}
-  playerRb: {fileID: 73902338}
 --- !u!114 &1602749100
 MonoBehaviour:
   m_ObjectHideFlags: 0
