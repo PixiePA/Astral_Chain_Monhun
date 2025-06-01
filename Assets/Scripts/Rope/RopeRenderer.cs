@@ -119,7 +119,7 @@ public class RopeRenderer : MonoBehaviour
     {
         foreach (Transform transform in ropeNodes)
         {
-            Debug.DrawLine(transform.position, transform.position + Vector3.up * 0.5f, Color.red);
+            Gizmos.DrawSphere(transform.position, 0.05f);
         }
     }
 }

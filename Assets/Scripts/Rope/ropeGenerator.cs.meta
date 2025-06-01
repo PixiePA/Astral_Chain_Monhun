@@ -5,8 +5,9 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - ropeEnd: {instanceID: 0}
-  - ropeController: {instanceID: 0}
+  - ropeRenderer: {instanceID: 0}
   - ropeSegmentPrefab: {fileID: 3730935307845442023, guid: ad59d58248729404da0be925ec908810, type: 3}
+  - bindingPointPrefab: {fileID: 1315480336025263209, guid: 2821bc042aec1f344b801462ac52bd90, type: 3}
   - joint: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
