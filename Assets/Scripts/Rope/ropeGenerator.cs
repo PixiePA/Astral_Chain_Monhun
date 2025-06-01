@@ -161,14 +161,8 @@ public class ropeGenerator : MonoBehaviour
     public void UnbindNode(GameObject node, bool isOpposite, CapsuleCollider boundCollider)
     {
         int indexOfNode = ropeRenderer.ropeNodes.IndexOf(node.transform);
-        if (indexOfNode - 1 > 0)
-        {
-            ropeRenderer.ropeNodes[indexOfNode - 1].SendMessage("OnSetNextNode", ropeRenderer.ropeNodes[indexOfNode + 1]);
-        }
-        if (indexOfNode + 1 <  ropeRenderer.ropeNodes.Count - 1)
-        {
-            ropeRenderer.ropeNodes[indexOfNode + 1].SendMessage("OnSetPrevNode", ropeRenderer.ropeNodes[indexOfNode - 1]);
-        }
+        ropeRenderer.ropeNodes[indexOfNode - 1].SendMessage("OnSetNextNode", ropeRenderer.ropeNodes[indexOfNode + 1], SendMessageOptions.DontRequireReceiver);
+        ropeRenderer.ropeNodes[indexOfNode + 1].SendMessage("OnSetPrevNode", ropeRenderer.ropeNodes[indexOfNode - 1], SendMessageOptions.DontRequireReceiver);
         ropeRenderer.ropeNodes.Remove(node.transform);
         boundColliders.Remove(boundCollider);
         collidersOnCooldown.Add(boundCollider);
@@ -223,10 +217,8 @@ public class ropeGenerator : MonoBehaviour
         newBindingNode.SendMessage("OnSetPrevNode", ropeRenderer.ropeNodes[prevNodeIndex]);
         newBindingNode.SendMessage("OnSetNextNode", ropeRenderer.ropeNodes[prevNodeIndex + 1]);
         newBindingNode.SendMessage("OnSetRopeGenerator", this);
-        if (prevNodeIndex > 0)
-        {
-            ropeRenderer.ropeNodes[prevNodeIndex].SendMessage("OnSetNextNode", newBindingNode.transform);
-        }
+        ropeRenderer.ropeNodes[prevNodeIndex].SendMessage("OnSetNextNode", newBindingNode.transform, SendMessageOptions.DontRequireReceiver);
+        ropeRenderer.ropeNodes[prevNodeIndex + 1].SendMessage("OnSetPrevNode", newBindingNode.transform, SendMessageOptions.DontRequireReceiver);
         ropeRenderer.ropeNodes.Insert(prevNodeIndex + 1, newBindingNode.transform);
         boundColliders.Add(boundCollider);
     }
