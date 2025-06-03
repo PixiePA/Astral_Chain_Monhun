@@ -51,20 +51,38 @@ public class PlayerController : ControllableEntity
 
     }
 
-    public void OnMove(InputValue value)
+    public void OnMove(InputAction.CallbackContext context)
     {
-        rawMoveInputValue = value.Get<Vector2>();
+        rawMoveInputValue = context.ReadValue<Vector2>();
         UpdateMoveInput();
     }
 
-    public void OnLook(InputValue value)
+    public void OnLook(InputAction.CallbackContext context)
     {
         UpdateMoveInput();
     }
 
-    public void OnSprint(InputValue value)
+    public void OnSprint(InputAction.CallbackContext context)
     {
-        isSprinting = !isSprinting;
+        if (context.control.device.name == "Keyboard")
+        {
+            
+            if (context.started)
+            {
+                isSprinting = true;
+            }
+            else if (context.canceled)
+            {
+                isSprinting = false;
+            }
+        }
+        else
+        {
+            if (context.started)
+            {
+                isSprinting = !isSprinting;
+            }
+        }
     }
 
     private void UpdateMoveInput()
