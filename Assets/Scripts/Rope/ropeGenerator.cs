@@ -161,8 +161,16 @@ public class ropeGenerator : MonoBehaviour
     public void UnbindNode(GameObject node, bool isOpposite, CapsuleCollider boundCollider)
     {
         int indexOfNode = ropeRenderer.ropeNodes.IndexOf(node.transform);
-        ropeRenderer.ropeNodes[indexOfNode - 1].SendMessage("OnSetNextNode", ropeRenderer.ropeNodes[indexOfNode + 1], SendMessageOptions.DontRequireReceiver);
-        ropeRenderer.ropeNodes[indexOfNode + 1].SendMessage("OnSetPrevNode", ropeRenderer.ropeNodes[indexOfNode - 1], SendMessageOptions.DontRequireReceiver);
+        if (indexOfNode - 1 > 0)
+        {
+            ropeRenderer.ropeNodes[indexOfNode - 1].GetComponent<RopeBindNode>().nextNode = ropeRenderer.ropeNodes[indexOfNode + 1];
+        }
+
+        if (indexOfNode + 1 < ropeRenderer.ropeNodes.Count - 1)
+        {
+            ropeRenderer.ropeNodes[indexOfNode + 1].GetComponent<RopeBindNode>().prevNode = ropeRenderer.ropeNodes[indexOfNode - 1];
+        }
+
         ropeRenderer.ropeNodes.Remove(node.transform);
         boundColliders.Remove(boundCollider);
         collidersOnCooldown.Add(boundCollider);
@@ -213,12 +221,23 @@ public class ropeGenerator : MonoBehaviour
     private void CreateBindNode(CapsuleCollider boundCollider, int prevNodeIndex)
     {
         GameObject newBindingNode = Instantiate(bindingPointPrefab);
-        newBindingNode.SendMessage("OnSetCollider", boundCollider);
-        newBindingNode.SendMessage("OnSetPrevNode", ropeRenderer.ropeNodes[prevNodeIndex]);
-        newBindingNode.SendMessage("OnSetNextNode", ropeRenderer.ropeNodes[prevNodeIndex + 1]);
-        newBindingNode.SendMessage("OnSetRopeGenerator", this);
-        ropeRenderer.ropeNodes[prevNodeIndex].SendMessage("OnSetNextNode", newBindingNode.transform, SendMessageOptions.DontRequireReceiver);
-        ropeRenderer.ropeNodes[prevNodeIndex + 1].SendMessage("OnSetPrevNode", newBindingNode.transform, SendMessageOptions.DontRequireReceiver);
+        RopeBindNode bindingScript = newBindingNode.GetComponent<RopeBindNode>();
+        bindingScript.boundCollider = boundCollider;
+        bindingScript.prevNode = ropeRenderer.ropeNodes[prevNodeIndex];
+        bindingScript.nextNode = ropeRenderer.ropeNodes[prevNodeIndex + 1];
+        bindingScript.ropeGenerator = this;
+
+        if (prevNodeIndex > 0)
+        {
+            ropeRenderer.ropeNodes[prevNodeIndex].GetComponent<RopeBindNode>().nextNode = newBindingNode.transform;
+        }
+
+        if (prevNodeIndex + 1 < ropeRenderer.ropeNodes.Count - 1)
+        {
+            ropeRenderer.ropeNodes[prevNodeIndex + 1].GetComponent<RopeBindNode>().prevNode = newBindingNode.transform;
+        }
+
+        newBindingNode.transform.position = bindingScript.DesiredPosition;
         ropeRenderer.ropeNodes.Insert(prevNodeIndex + 1, newBindingNode.transform);
         boundColliders.Add(boundCollider);
     }

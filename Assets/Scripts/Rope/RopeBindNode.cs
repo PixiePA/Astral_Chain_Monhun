@@ -24,7 +24,7 @@ public class RopeBindNode : MonoBehaviour
         }
     }
 
-    private Vector3 DesiredPosition
+    public Vector3 DesiredPosition
     {
         get
         {
@@ -46,9 +46,8 @@ public class RopeBindNode : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position = DesiredPosition;
         if (canUnbind )
         {
             if (isInsideCollider )
@@ -60,6 +59,8 @@ public class RopeBindNode : MonoBehaviour
         {
             canUnbind = !isInsideCollider;
         }
+
+        transform.position = DesiredPosition;
     }
 
     public void OnSetCollider(CapsuleCollider coll)
