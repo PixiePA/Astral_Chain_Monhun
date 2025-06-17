@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class ItemScriptableObject : ScriptableObject
 {
-    public string itemName;
-    public string description;
-    public Sprite icon;
-    public int maxStackSize = 1;
+    [SerializeField] private string itemName;
+    [SerializeField] private string itemDescription;
+    [SerializeField] private Sprite itemIcon;
+
+    public string ItemName => itemName;
+    public string ItemDescription => itemDescription;
+    public Sprite ItemIcon => itemIcon;
 }

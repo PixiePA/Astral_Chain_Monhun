@@ -37,10 +37,10 @@ public static class PlayerEvents
     }
 
     // When player takes damage
-    public static Action<float> onHealthChanged;
+    public static Action<float> onChangeHealth;
 
-    public static void HealthChanged(float health)
+    public static void ChangeHealth(float health)
     {
-        onHealthChanged?.Invoke(health);
+        onChangeHealth?.Invoke(health);
     }
 }

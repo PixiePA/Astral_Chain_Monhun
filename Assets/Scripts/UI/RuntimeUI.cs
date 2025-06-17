@@ -30,8 +30,8 @@ public class RuntimeUI : MonoBehaviour
     }
     private void OnEnable()
     {
-        StatsEvents.OnHealthChanged += HealthChanged;
-        StatsEvents.OnEnergyChanged += EnergyChanged;
+        UIEvents.OnHealthChanged += HealthChanged;
+        UIEvents.OnEnergyChanged += EnergyChanged;
         healthbarBackground = uiDocument.rootVisualElement.Q<VisualElement>("HealthbarBackground");
         healthbarFill = uiDocument.rootVisualElement.Q<VisualElement>("HealthbarMask");
         energybarBackground = uiDocument.rootVisualElement.Q<VisualElement>("EnergybarBackground");
@@ -39,7 +39,7 @@ public class RuntimeUI : MonoBehaviour
     }
     private void OnDisable()
     {
-        StatsEvents.OnHealthChanged -= HealthChanged;
-        StatsEvents.OnEnergyChanged -= EnergyChanged;
+        UIEvents.OnHealthChanged -= HealthChanged;
+        UIEvents.OnEnergyChanged -= EnergyChanged;
     }
 }

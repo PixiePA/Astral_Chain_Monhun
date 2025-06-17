@@ -18,10 +18,10 @@ public class StatsController : MonoBehaviour
         return maxEnergy;
     }
 
-    void TakeDamage(float damage)
+    void TakeDamage(float healthChange)
     {         
-        health = Mathf.Clamp(health - damage, 0, maxHealth);
-        StatsEvents.HealthUI(health);
+        health = Mathf.Clamp(health + healthChange, 0, maxHealth);
+        UIEvents.HealthChanged(health);
     }
 
     // Update is called once per frame
@@ -29,21 +29,21 @@ public class StatsController : MonoBehaviour
     {
         energy += Time.deltaTime * 5;
         energy = Mathf.Clamp(energy, 0, maxEnergy);
-        StatsEvents.ChangeEnergy(energy);
+        UIEvents.EnergyChanged(energy);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StatsEvents.Damage(10);
+            PlayerEvents.ChangeHealth(-10);
             energy = Mathf.Clamp(energy - 10, 0, maxEnergy);
-            StatsEvents.ChangeEnergy(energy);
+            UIEvents.EnergyChanged(energy);
         }
     }
     private void OnEnable()
     {
-        StatsEvents.OnDamage += TakeDamage;
+        PlayerEvents.onChangeHealth += TakeDamage;
     }
     
     private void OnDisable()
     {
-        StatsEvents.OnDamage -= TakeDamage;
+        PlayerEvents.onChangeHealth -= TakeDamage;
     }
 }
