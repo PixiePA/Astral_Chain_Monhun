@@ -4,7 +4,7 @@ using UnityEngine;
 public class StatsController : MonoBehaviour
 {
     [SerializeField] private bool testButton = false;
-    [SerializeField] private float health = 100;
+    [SerializeField] private float health = 100; //temp
     [SerializeField] private float maxHealth = 100;
 
     [SerializeField] private float energy = 100;
@@ -32,16 +32,27 @@ public class StatsController : MonoBehaviour
         OnEnergyChanged?.Invoke(energy);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Action<ItemScriptableObject> OnPickup;
+    public void PickupItem(ItemScriptableObject item)
+    {
+        OnPickup?.Invoke(item);
+    }
+
+    public Action<ItemScriptableObject> OnUseItem;
+    public void UseItem(ItemScriptableObject item)
+    {
+        OnUseItem?.Invoke(item);
+    }
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    // Debug
     void Update()
     {
-        ChangeEnergy(0.1f); // Example of changing energy over time
+        ChangeEnergy(0.1f);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ChangeHealth(-10);
