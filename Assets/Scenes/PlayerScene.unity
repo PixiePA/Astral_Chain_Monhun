@@ -1033,7 +1033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1602749101}
   - component: {fileID: 1602749100}
-  - component: {fileID: 1602749099}
+  - component: {fileID: 1602749102}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1041,33 +1041,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1602749099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602749098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ff865b8a0b31474a978c64ba0495a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 0.8570522
-  runSpeed: 5.687158
-  runThreshold: 0.3
-  inputSpeed: 0
-  speedToTargetSpeedLerpRate: 0.3
-  rotateToTargetSpeedLerpRate: 0.3
-  lean: 0
-  maxLeanTurnRate: 15
-  animator: {fileID: 73902340}
-  entityCharacter: {fileID: 73902335}
-  entityRb: {fileID: 73902338}
-  sprintSpeed: 0.8
-  sprintStopSpeed: 0.6
-  isSprinting: 0
-  playerCamera: {fileID: 1732324867}
 --- !u!114 &1602749100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1095,7 +1068,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602749099}
+      - m_Target: {fileID: 1602749102}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -1111,7 +1084,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Move[/SwitchProControllerHID/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602749099}
+      - m_Target: {fileID: 1602749102}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnLook
         m_Mode: 0
@@ -1126,7 +1099,19 @@ MonoBehaviour:
     m_ActionId: 6b444451-8a00-4d00-a97e-f47457f736a8
     m_ActionName: 'Player/Look[/SwitchProControllerHID/rightStick,/Mouse/delta]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1602749102}
+        m_TargetAssemblyTypeName: TestWeaponPlayerController, Assembly-CSharp
+        m_MethodName: OnAttack1Activated
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
     m_ActionName: 'Player/Attack 1[/SwitchProControllerHID/buttonNorth,/Mouse/leftButton]'
   - m_PersistentCalls:
@@ -1135,7 +1120,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Jump[/Keyboard/space,/SwitchProControllerHID/buttonSouth]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602749099}
+      - m_Target: {fileID: 1602749102}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnSprint
         m_Mode: 0
@@ -1209,6 +1194,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1602749102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602749098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb7987d8e0d2234e901511d400e3f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 0.8570522
+  runSpeed: 5.687158
+  runThreshold: 0.3
+  inputSpeed: 0
+  speedToTargetSpeedLerpRate: 0.3
+  rotateToTargetSpeedLerpRate: 0.3
+  lean: 0
+  maxLeanTurnRate: 15
+  animator: {fileID: 73902340}
+  entityCharacter: {fileID: 73902335}
+  entityRb: {fileID: 73902338}
+  sprintSpeed: 0.8
+  sprintStopSpeed: 0.6
+  isSprinting: 0
+  playerCamera: {fileID: 1732324867}
 --- !u!1 &1646992550
 GameObject:
   m_ObjectHideFlags: 0

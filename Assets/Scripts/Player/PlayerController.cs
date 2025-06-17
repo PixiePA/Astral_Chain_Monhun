@@ -12,19 +12,19 @@ public class PlayerController : ControllableEntity
 
     [SerializeField]
     [Range(0f, 1f)]
-    private float sprintSpeed = 0.6f;
+    protected float sprintSpeed = 0.6f;
 
     [SerializeField]
     [Range(0f, 1f)]
-    private float sprintStopSpeed = 0.6f;
+    protected float sprintStopSpeed = 0.6f;
 
     [SerializeField]
-    private bool isSprinting;
+    protected bool isSprinting;
 
     [SerializeField]
-    private GameObject playerCamera;
+    protected GameObject playerCamera;
 
-    private Vector2 CurrentCameraDirection
+    protected Vector2 CurrentCameraDirection
     {
         get
         {
@@ -43,7 +43,7 @@ public class PlayerController : ControllableEntity
 
     }
 
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         UpdateMoveInput();
         
@@ -85,7 +85,7 @@ public class PlayerController : ControllableEntity
         }
     }
 
-    private void UpdateMoveInput()
+    protected void UpdateMoveInput()
     {
         Vector2 newMoveValue = RotateVector2AroundRadians(rawMoveInputValue, -GetRadiansFromDirection(CurrentCameraDirection));
         moveInputValue = newMoveValue;
