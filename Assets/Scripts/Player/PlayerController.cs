@@ -12,24 +12,60 @@ public class PlayerController : ControllableEntity
 
     [SerializeField]
     [Range(0f, 1f)]
-    private float sprintSpeed = 0.6f;
+    protected float sprintSpeed = 0.6f;
 
     [SerializeField]
     [Range(0f, 1f)]
-    private float sprintStopSpeed = 0.6f;
+    protected float sprintStopSpeed = 0.6f;
 
     [SerializeField]
-    private bool isSprinting;
+    protected bool isSprinting;
 
     [SerializeField]
-    private GameObject playerCamera;
+    protected GameObject playerCamera;
 
-    private Vector2 CurrentCameraDirection
+    protected bool canMove;
+
+    protected bool canTurn;
+
+    protected bool attack1Pressed;
+
+    protected bool attack1Held;
+
+    protected bool attack2Pressed;
+
+    protected bool attack2Held;
+
+    protected bool attack3Pressed;
+
+    protected bool attack3Held;
+
+    protected float inputBuffer;
+
+    protected string state;
+
+    protected Vector2 CurrentCameraDirection
     {
         get
         {
             return new Vector2(playerCamera.transform.forward.x, playerCamera.transform.forward.z).normalized;
         }
+    }
+
+    private void OnEnable()
+    {
+        PlayerEvents.onChangeCanMove += ChangeCanMove;
+        PlayerEvents.onChangeCanTurn += ChangeCanTurn;
+        PlayerEvents.onChangeState += ChangeState;
+        PlayerEvents.onResetAttackInputs += ResetAttackInputs;
+    }
+
+    private void OnDisable()
+    {
+        PlayerEvents.onChangeCanMove -= ChangeCanMove;
+        PlayerEvents.onChangeCanTurn -= ChangeCanTurn;
+        PlayerEvents.onChangeState -= ChangeState;
+        PlayerEvents.onResetAttackInputs -= ResetAttackInputs;
     }
 
     void Start()
@@ -43,7 +79,7 @@ public class PlayerController : ControllableEntity
 
     }
 
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         UpdateMoveInput();
         
@@ -85,12 +121,19 @@ public class PlayerController : ControllableEntity
         }
     }
 
-    private void UpdateMoveInput()
+    protected void UpdateMoveInput()
     {
         Vector2 newMoveValue = RotateVector2AroundRadians(rawMoveInputValue, -GetRadiansFromDirection(CurrentCameraDirection));
         moveInputValue = newMoveValue;
-        targetSpeed = moveInputValue.magnitude;
 
+        if (canMove)
+        {
+            targetSpeed = moveInputValue.magnitude;
+        }
+        else
+        {
+            targetSpeed = 0;
+        }
         //Cap speed if is not sprinting
         if (!isSprinting)
         {
@@ -101,5 +144,40 @@ public class PlayerController : ControllableEntity
         {
             isSprinting = false;
         }
+    }
+
+    protected override void LerpRotation()
+    {
+        if (canTurn)
+        {
+            base.LerpRotation();
+        }
+    }
+
+    protected void ResetAttackInputs()
+    {
+        inputBuffer = 0;
+        attack1Held = false;
+        attack2Held = false;   
+        attack3Held = false;
+        attack1Pressed = false;
+        attack2Pressed = false;
+        attack3Pressed = false;
+    }
+
+
+    private void ChangeCanMove(bool canMove)
+    {
+        this.canMove = canMove;
+    }
+
+    private void ChangeState(string newState)
+    {
+        state = newState;
+    }
+
+    private void ChangeCanTurn(bool canTurn)
+    {
+        this.canTurn = canTurn;
     }
 }

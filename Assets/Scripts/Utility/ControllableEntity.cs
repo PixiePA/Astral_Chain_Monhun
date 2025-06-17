@@ -108,9 +108,17 @@ public class ControllableEntity : MonoBehaviour
         entityRb.AddForce(horizontalVelocityDifference, ForceMode.VelocityChange);
     }
 
-    protected void LerpSpeedAndRotation()
+    protected virtual void LerpSpeedAndRotation()
     {
         //Lerping speed
+        LerpSpeed();
+
+        //Lerping rotation
+        LerpRotation();
+    }
+    
+    protected virtual void LerpSpeed()
+    {
         if (Mathf.Abs(inputSpeed - targetSpeed) < 0.1)
         {
             inputSpeed = targetSpeed;
@@ -119,8 +127,10 @@ public class ControllableEntity : MonoBehaviour
         {
             inputSpeed = Mathf.Lerp(inputSpeed, targetSpeed, speedToTargetSpeedLerpRate);
         }
+    }
 
-        //Lerping rotation
+    protected virtual void LerpRotation()
+    {
         if (moveInputValue.sqrMagnitude > 0)
         {
             float currentRotationInDegrees = GetRotationFromDirection(CurrentMoveDirection);
