@@ -5,7 +5,7 @@ public class UpdatePlayerState : StateMachineBehaviour
     [SerializeField] private string stateName;
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        PlayerEvents.ChangeState(stateName);
+        PlayerEvents.ChangeState(stateName, animator);
     }
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

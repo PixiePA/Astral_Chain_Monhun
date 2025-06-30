@@ -7,8 +7,8 @@ public class UpdateCanMoveTurn : StateMachineBehaviour
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        PlayerEvents.onChangeCanTurn(canTurn);
-        PlayerEvents.onChangeCanMove(canMove);
+        PlayerEvents.onChangeCanTurn(canTurn, animator);
+        PlayerEvents.onChangeCanMove(canMove, animator);
     }
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

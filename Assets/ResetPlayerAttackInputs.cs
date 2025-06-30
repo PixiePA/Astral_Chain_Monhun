@@ -10,7 +10,7 @@ public class ResetPlayerAttackInputs : StateMachineBehaviour
     {
         if (resetOnEnter)
         {
-            PlayerEvents.ResetAttackInputs();
+            PlayerEvents.ResetAttackInputs(animator);
         }
     }
 
@@ -18,7 +18,7 @@ public class ResetPlayerAttackInputs : StateMachineBehaviour
     {
         if (resetOnExit)
         {
-            PlayerEvents.ResetAttackInputs();
+            PlayerEvents.ResetAttackInputs(animator);
         }
     }
     // OnStateEnter is called before OnStateEnter is called on any state inside this state machine

@@ -74,7 +74,20 @@ public class PlayerController : ControllableEntity
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
+    {
+        if (inputBuffer > 0)
+        {
+            Debug.Log("Buffer: " + inputBuffer);
+            if ((inputBuffer -= Time.fixedDeltaTime) < 0)
+            {
+                OnBufferEnded();
+                ResetAttackInputs();
+            }
+        }
+    }
+
+    protected virtual void OnBufferEnded()
     {
 
     }
@@ -154,11 +167,19 @@ public class PlayerController : ControllableEntity
         }
     }
 
+    protected void ResetAttackInputs(Animator animator)
+    {
+        if (this.animator == animator)
+        {
+            ResetAttackInputs();
+        }
+    }
+
     protected void ResetAttackInputs()
     {
         inputBuffer = 0;
         attack1Held = false;
-        attack2Held = false;   
+        attack2Held = false;
         attack3Held = false;
         attack1Pressed = false;
         attack2Pressed = false;
@@ -166,18 +187,29 @@ public class PlayerController : ControllableEntity
     }
 
 
-    private void ChangeCanMove(bool canMove)
+    private void ChangeCanMove(bool canMove, Animator animator)
     {
-        this.canMove = canMove;
+        if (this.animator == animator)
+        {
+            this.canMove = canMove;
+        }
+
     }
 
-    private void ChangeState(string newState)
+    private void ChangeState(string newState, Animator animator)
     {
-        state = newState;
+        if (this.animator == animator)
+        {
+            state = newState;
+        }
+
     }
 
-    private void ChangeCanTurn(bool canTurn)
+    private void ChangeCanTurn(bool canTurn, Animator animator)
     {
-        this.canTurn = canTurn;
+        if (this.animator == animator)
+        {
+            this.canTurn = canTurn;
+        }
     }
 }
