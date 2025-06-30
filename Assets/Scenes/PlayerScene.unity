@@ -641,7 +641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cf0350bb89bfe419f76ff95bd32bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testButton: 0
   health: 100
   maxHealth: 100
   energy: 80
@@ -1311,6 +1310,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2136977537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7494624001562499877, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
+  m_PrefabInstance: {fileID: 8391308193133490780}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb7987d8e0d2234e901511d400e3f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8391308193133490780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1322,6 +1332,46 @@ PrefabInstance:
     - target: {fileID: 279554272584267591, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582723893015987897, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582723893015987897, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: aa06aaf1-f918-4253-9e5f-76e56143bdc3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582723893015987897, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: 'Player/Attack 2[/SwitchProControllerHID/buttonEast,/Mouse/rightButton]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582723893015987897, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582723893015987897, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582723893015987897, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2136977537}
+    - target: {fileID: 1582723893015987897, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582723893015987897, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnAttack2Activated
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582723893015987897, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TestWeaponPlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582723893015987897, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5987961594501108341, guid: 7f4bb9461e98f954899e436d15a8d7a0, type: 3}
       propertyPath: m_LocalPosition.x
