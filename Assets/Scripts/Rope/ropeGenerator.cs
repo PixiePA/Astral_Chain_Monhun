@@ -74,7 +74,7 @@ public class ropeGenerator : MonoBehaviour
 
                         if (!collidersOnCooldown.Contains((CapsuleCollider)hitinfo.collider))
                         {
-                            CreateBindNode((CapsuleCollider)hitinfo.collider, i);
+                            CreateBindNode((CapsuleCollider)hitinfo.collider, hitinfo.point, i);
                             break;
                         }   
                     }
@@ -139,7 +139,7 @@ public class ropeGenerator : MonoBehaviour
                     {
                         if (hitinfo.collider.GetType() == typeof(CapsuleCollider))
                         {
-                            StartBind((CapsuleCollider)hitinfo.collider);
+                            StartBind((CapsuleCollider)hitinfo.collider, hitinfo.point);
                         }
                     }
 
@@ -204,7 +204,7 @@ public class ropeGenerator : MonoBehaviour
         ropeEnd = newRopeNode;
     }
 
-    private void StartBind(CapsuleCollider boundCollider)
+    private void StartBind(CapsuleCollider boundCollider, Vector3 bindNodePosition)
     {
         for (int i = 1; ropeRenderer.ropeNodes[i] != transform; )
         {
@@ -214,13 +214,13 @@ public class ropeGenerator : MonoBehaviour
 
         ropeRenderer.InitializeNodeList(transform);
         boundColliders = new List<CapsuleCollider>();
-        CreateBindNode(boundCollider, 0);
+        CreateBindNode(boundCollider, bindNodePosition, 0);
         isBinding = true;
     }
 
-    private void CreateBindNode(CapsuleCollider boundCollider, int prevNodeIndex)
+    private void CreateBindNode(CapsuleCollider boundCollider,Vector3 initialPosition, int prevNodeIndex)
     {
-        GameObject newBindingNode = Instantiate(bindingPointPrefab);
+        GameObject newBindingNode = Instantiate(bindingPointPrefab, initialPosition, Quaternion.identity);
         RopeBindNode bindingScript = newBindingNode.GetComponent<RopeBindNode>();
         bindingScript.boundCollider = boundCollider;
         bindingScript.prevNode = ropeRenderer.ropeNodes[prevNodeIndex];

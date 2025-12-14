@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetOnExit: 1
-  resetOnEnter: 0
+  resetOnEnter: 1
 --- !u!1101 &1630247122149766357
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

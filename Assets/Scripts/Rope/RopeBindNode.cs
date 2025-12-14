@@ -8,6 +8,7 @@ public class RopeBindNode : MonoBehaviour
     public Transform nextNode;
     public ropeGenerator ropeGenerator;
     public bool canUnbind;
+    public bool hasBound;
     public Vector3 BoundColliderCentre
     {
         get
@@ -16,11 +17,19 @@ public class RopeBindNode : MonoBehaviour
         }
     }
 
-    private Vector3 InterceptPoint
+    public Vector3 prevNodeToColliderDirection
     {
         get
         {
-            return prevNode.position + Vector3.Project(BoundColliderCentre - prevNode.position, nextNode.position - prevNode.position);
+            return (boundCollider.ClosestPoint(prevNode.position) - prevNode.position).normalized;
+        }
+    }
+
+    public Vector3 nextNodeToColliderDirection
+    {
+        get
+        {
+            return (boundCollider.ClosestPoint(nextNode.position) - nextNode.position).normalized;
         }
     }
 
@@ -28,39 +37,51 @@ public class RopeBindNode : MonoBehaviour
     {
         get
         {
-            return BoundColliderCentre + (BoundColliderCentre - boundCollider.ClosestPoint(InterceptPoint));
-        }
-    }
+            Vector3 averageDirection = ((prevNodeToColliderDirection + nextNodeToColliderDirection)).normalized;
 
-    public bool isInsideCollider
-    {
-        get
-        {
-            return (boundCollider.ClosestPoint(InterceptPoint) - InterceptPoint).sqrMagnitude == 0;
-        }
-    }
+            //Determine height or radius is higher for accurate raycast onto surface
+            float rayCastStartProjectionDistance = boundCollider.height + 1;
+            if (boundCollider.radius > boundCollider.height)
+            {
+                rayCastStartProjectionDistance = boundCollider.radius + 1;
+            }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+            //Find 2 possible points to act as connection point
+            boundCollider.Raycast(new Ray(BoundColliderCentre + averageDirection * rayCastStartProjectionDistance, -averageDirection), out RaycastHit point1Info, rayCastStartProjectionDistance);
+            boundCollider.Raycast(new Ray(BoundColliderCentre - averageDirection * rayCastStartProjectionDistance, averageDirection), out RaycastHit point2Info, rayCastStartProjectionDistance);
+
+
+            //Use the closer one
+            if (Mathf.Abs((transform.position - point1Info.point).magnitude) < Mathf.Abs((transform.position - point2Info.point).magnitude))
+            {
+                return point1Info.point;
+            }
+
+            return point2Info.point;
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (canUnbind )
+        transform.position = DesiredPosition;
+
+        Vector3 directionToCentre = (BoundColliderCentre - transform.position).normalized;
+        Vector3 directionToPrevNode = (prevNode.position - transform.position).normalized;
+        Vector3 directionToNextNode = (nextNode.position - transform.position).normalized;
+        Vector3 averageDirectionToNodes = (directionToPrevNode + directionToNextNode).normalized;
+
+        //If the average of directions of directions to nodes points away, detach
+        if (Vector3.Dot(averageDirectionToNodes, directionToCentre) < 0)
         {
-            if (isInsideCollider )
-            {
-                ropeGenerator.UnbindNode(this.gameObject, Vector3.Dot(prevNode.position - transform.position, nextNode.position-transform.position) < 0, boundCollider);
-            }
+           ropeGenerator.UnbindNode(this.gameObject, true, boundCollider);
         }
-        else
+        else if (Vector3.Dot(directionToPrevNode, directionToNextNode) > 0.95f)
         {
-            canUnbind = !isInsideCollider;
+           ropeGenerator.UnbindNode(this.gameObject, false, boundCollider);
         }
 
-        transform.position = DesiredPosition;
+
     }
 
     public void OnSetCollider(CapsuleCollider coll)
@@ -86,9 +107,7 @@ public class RopeBindNode : MonoBehaviour
     {
         Debug.DrawLine(DesiredPosition, prevNode.position, Color.red);
         Debug.DrawLine (DesiredPosition, nextNode.position, Color.red);
-        Debug.DrawLine(InterceptPoint, boundCollider.ClosestPoint(InterceptPoint), Color.cyan);
         Gizmos.DrawSphere(BoundColliderCentre, 0.1F);
         Debug.DrawLine(prevNode.position, nextNode.position, Color.magenta);
-        Gizmos.DrawWireSphere(boundCollider.ClosestPoint(InterceptPoint), 0.1f);
     }
 }
