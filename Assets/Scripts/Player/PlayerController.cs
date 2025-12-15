@@ -30,17 +30,31 @@ public class PlayerController : ControllableEntity
 
     protected bool attack1Pressed;
 
-    protected bool attack1Held;
+    protected float attack1HeldTime;
+
+    protected int attack1PressCount;
+
+    protected float attack1TimeSinceLastPress;
 
     protected bool attack2Pressed;
 
-    protected bool attack2Held;
+    protected float attack2HeldTime;
+
+    protected int attack2PressCount;
+
+    protected float attack2TimeSinceLastPress;
 
     protected bool attack3Pressed;
 
-    protected bool attack3Held;
+    protected float attack3HeldTime;
+
+    protected int attack3PressCount;
+
+    protected float attack3TimeSinceLastPress;
 
     protected float inputBuffer;
+
+    protected bool inputBufferActivated;
 
     protected string state;
 
@@ -76,15 +90,41 @@ public class PlayerController : ControllableEntity
     // Update is called once per frame
     protected virtual void Update()
     {
-        if (inputBuffer > 0)
+        if (attack1Pressed)
         {
-            Debug.Log("Buffer: " + inputBuffer);
-            if ((inputBuffer -= Time.fixedDeltaTime) < 0)
-            {
-                OnBufferEnded();
-                ResetAttackInputs();
-            }
+            attack1HeldTime += Time.deltaTime;
         }
+
+        if (attack1PressCount > 0)
+        {
+            attack1TimeSinceLastPress += Time.deltaTime;
+        }
+
+        if (attack2Pressed)
+        {
+            attack2HeldTime += Time.deltaTime;
+        }
+        if (attack2PressCount > 0)
+        {
+            attack2TimeSinceLastPress += Time.deltaTime;
+        }
+
+        if (attack3Pressed)
+        {
+            attack3HeldTime += Time.deltaTime;
+        }
+        if (attack3PressCount > 0)
+        {
+            attack3TimeSinceLastPress += Time.deltaTime;
+        }
+
+        if (inputBufferActivated)
+        {
+            inputBuffer += Time.deltaTime;
+        }
+
+        UpdateAnimator();
+
     }
 
     protected virtual void OnBufferEnded()
@@ -134,6 +174,23 @@ public class PlayerController : ControllableEntity
         }
     }
 
+    public void UpdateAnimator()
+    {
+        animator.SetBool("Attack1Pressed", attack1Pressed);
+        animator.SetFloat("Attack1HeldTime", attack1HeldTime);
+        animator.SetInteger("Attack1PressCount", attack1PressCount);
+        animator.SetFloat("Attack1TimeSinceLastPress", attack1TimeSinceLastPress);
+        animator.SetBool("Attack2Pressed", attack2Pressed);
+        animator.SetFloat("Attack2HeldTime", attack2HeldTime);
+        animator.SetInteger("Attack2PressCount", attack2PressCount);
+        animator.SetFloat("Attack2TimeSinceLastPress", attack2TimeSinceLastPress);
+        animator.SetBool("Attack3Pressed", attack3Pressed);
+        animator.SetFloat("Attack3HeldTime", attack3HeldTime);
+        animator.SetInteger("Attack3PressCount", attack3PressCount);
+        animator.SetFloat("Attack3TimeSinceLastPress", attack3TimeSinceLastPress);
+        animator.SetFloat("InputBuffer", inputBuffer);
+    }
+
     protected void UpdateMoveInput()
     {
         Vector2 newMoveValue = RotateVector2AroundRadians(rawMoveInputValue, -GetRadiansFromDirection(CurrentCameraDirection));
@@ -178,12 +235,21 @@ public class PlayerController : ControllableEntity
     protected void ResetAttackInputs()
     {
         inputBuffer = 0;
-        attack1Held = false;
-        attack2Held = false;
-        attack3Held = false;
+        inputBufferActivated = false;
         attack1Pressed = false;
+        attack1TimeSinceLastPress = 0;
+        attack1PressCount = 0;
+        attack1HeldTime = 0;
         attack2Pressed = false;
+        attack2TimeSinceLastPress = 0;
+        attack2PressCount = 0;  
+        attack2HeldTime = 0;
         attack3Pressed = false;
+        attack3TimeSinceLastPress = 0;
+        attack3PressCount = 0;
+        attack3HeldTime = 0;
+
+        UpdateAnimator();
     }
 
 
@@ -210,6 +276,61 @@ public class PlayerController : ControllableEntity
         if (this.animator == animator)
         {
             this.canTurn = canTurn;
+        }
+    }
+
+    public void OnAttack1Activated(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            attack1PressCount++;
+            attack1TimeSinceLastPress = 0;
+            attack1HeldTime = 0;
+            attack1Pressed = true;
+            inputBufferActivated = true;
+            UpdateAnimator();
+        }
+        if (context.canceled)
+        {
+            attack1Pressed = false;
+            UpdateAnimator();
+        }
+
+    }
+
+    public void OnAttack2Activated(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            attack2PressCount++;
+            attack2TimeSinceLastPress = 0;
+            attack2HeldTime = 0;
+            attack2Pressed = true;
+            inputBufferActivated = true;
+            UpdateAnimator();
+        }
+        if (context.canceled)
+        {
+            attack2Pressed = false;
+            UpdateAnimator();
+        }
+    }
+
+    public void OnAttack3Activated(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            attack3PressCount++;
+            attack3TimeSinceLastPress = 0;
+            attack3HeldTime = 0;
+            attack3Pressed = true;
+            inputBufferActivated = true;
+            UpdateAnimator();
+        }
+        if (context.canceled)
+        {
+            attack3Pressed = false;
+            UpdateAnimator();
         }
     }
 }
