@@ -19,6 +19,10 @@ public class PlayerController : ControllableEntity
     protected float sprintStopSpeed = 0.6f;
 
     [SerializeField]
+    [Range(0f, 0.3f)]
+    protected float inputRecordClearTime = 0.2f;
+
+    [SerializeField]
     protected bool isSprinting;
 
     [SerializeField]
@@ -36,6 +40,8 @@ public class PlayerController : ControllableEntity
 
     protected float attack1TimeSinceLastPress;
 
+    protected float attack1ClearRecordTimer;
+
     protected bool attack2Pressed;
 
     protected float attack2HeldTime;
@@ -44,6 +50,8 @@ public class PlayerController : ControllableEntity
 
     protected float attack2TimeSinceLastPress;
 
+    protected float attack2ClearRecordTimer;
+
     protected bool attack3Pressed;
 
     protected float attack3HeldTime;
@@ -51,6 +59,8 @@ public class PlayerController : ControllableEntity
     protected int attack3PressCount;
 
     protected float attack3TimeSinceLastPress;
+
+    protected float attack3ClearRecordTimer;
 
     protected float inputBuffer;
 
@@ -100,6 +110,14 @@ public class PlayerController : ControllableEntity
             attack1TimeSinceLastPress += Time.deltaTime;
         }
 
+        if (attack1ClearRecordTimer > 0)
+        {
+            if ((attack1ClearRecordTimer -= Time.deltaTime) < 0)
+            {
+                attack1PressCount = 0;
+            }
+        }
+
         if (attack2Pressed)
         {
             attack2HeldTime += Time.deltaTime;
@@ -107,6 +125,13 @@ public class PlayerController : ControllableEntity
         if (attack2PressCount > 0)
         {
             attack2TimeSinceLastPress += Time.deltaTime;
+        }
+        if (attack2ClearRecordTimer > 0)
+        {
+            if ((attack2ClearRecordTimer -= Time.deltaTime) < 0)
+            {
+                attack2PressCount = 0;
+            }
         }
 
         if (attack3Pressed)
@@ -116,6 +141,19 @@ public class PlayerController : ControllableEntity
         if (attack3PressCount > 0)
         {
             attack3TimeSinceLastPress += Time.deltaTime;
+        }
+        if (attack3ClearRecordTimer > 0)
+        {
+            if ((attack3ClearRecordTimer -= Time.deltaTime) < 0)
+            {
+                attack3PressCount = 0;
+            }
+        }
+
+        if (attack1PressCount == 0 && attack2PressCount == 0 && attack3PressCount == 0)
+        {
+            inputBufferActivated = false;
+            inputBuffer = 0;
         }
 
         if (inputBufferActivated)
@@ -293,6 +331,7 @@ public class PlayerController : ControllableEntity
         if (context.canceled)
         {
             attack1Pressed = false;
+            attack1ClearRecordTimer = inputRecordClearTime;
             UpdateAnimator();
         }
 
@@ -312,6 +351,7 @@ public class PlayerController : ControllableEntity
         if (context.canceled)
         {
             attack2Pressed = false;
+            attack2ClearRecordTimer = inputRecordClearTime;
             UpdateAnimator();
         }
     }
@@ -330,6 +370,7 @@ public class PlayerController : ControllableEntity
         if (context.canceled)
         {
             attack3Pressed = false;
+            attack3ClearRecordTimer = inputRecordClearTime;
             UpdateAnimator();
         }
     }
